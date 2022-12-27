@@ -9,10 +9,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="{`react-page`}">to React.js Page</a>
+              <a href="react-page">to React.js Page</a>
             </li>
             <li>
-              <a href="{`vue-page`}">to Vue.js Page</a>
+              <a href="vue-page">to Vue.js Page</a>
             </li>
           </ul>
         </nav>
