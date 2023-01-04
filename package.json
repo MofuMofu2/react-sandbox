@@ -36,6 +36,8 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@mdx-js/loader": "^2.2.1",
+    "@mdx-js/mdx": "^2.2.1",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -46,6 +48,7 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@types/mdx": "^2.0.3",
     "@types/node": "^18.0.3",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.19.0",
