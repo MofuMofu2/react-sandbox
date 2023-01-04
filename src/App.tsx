@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-/* eslint-disable import/no-webpack-loader-syntax */
-import Content from "!@mdx-js/loader!./content.mdx";
+import Content from "./content.mdx";
 
 function App() {
   return (
