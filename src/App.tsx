@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+/* eslint-disable import/no-webpack-loader-syntax */
+import Content from "!@mdx-js/loader!./content.mdx";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
           </ul>
         </nav>
       </header>
+      <article>
+        <Content />
+      </article>
     </div>
   );
 }
