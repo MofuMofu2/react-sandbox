@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TodoApp() {
+export default function Todo() {
   const [todos] = useState([
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Build a React app", completed: true },
@@ -20,5 +20,3 @@ function TodoApp() {
     </div>
   );
 }
-
-export default TodoApp;
