@@ -12,7 +12,7 @@ function App() {
               <a href="react-page">to React.js Page</a>
             </li>
             <li>
-              <a href="vue-page">to Vue.js Page</a>
+              <a href="todo-app">TODO APP</a>
             </li>
           </ul>
         </nav>

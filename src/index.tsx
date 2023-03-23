@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import ReactPage from "./react-page";
+import TodoApp from "./todo-app";
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "react-page",
     element: <ReactPage />,
+  },
+  {
+    path: "todo-app",
+    element: <TodoApp />,
   },
 ]);
 
