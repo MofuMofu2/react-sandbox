@@ -1,24 +1,8 @@
 import React from "react";
-import "./App.css";
+import MainNavigation from "./MainNavigation";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>This is React.js Project.</p>
-        <nav>
-          <ul>
-            <li>
-              <a href="react-page">to React.js Page</a>
-            </li>
-            <li>
-              <a href="todo-app">TODO APP</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
-  );
+  return <MainNavigation />;
 }
 
 export default App;
