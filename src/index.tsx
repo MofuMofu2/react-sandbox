@@ -6,6 +6,12 @@ import App from "./App";
 import { About } from "./component/About/About";
 import reportWebVitals from "./reportWebVitals";
 
+// 開発モードのときはAPIモックを起動する
+if (process.env.NODE_ENV === "development") {
+  const { worker } = require("./mocks/browser");
+  worker.start();
+}
+
 const router = createBrowserRouter([
   {
     path: "/",
