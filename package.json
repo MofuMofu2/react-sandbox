@@ -9,9 +9,6 @@
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006 -s public",
-    "test-storybook": "test-storybook",
-    "build-storybook": "build-storybook -s public -o docs"
   },
   "lint-staged": {
     "*.ts": "prettier --write",
