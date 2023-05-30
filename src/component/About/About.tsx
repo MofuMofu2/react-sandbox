@@ -4,7 +4,6 @@ export const About = () => {
   return (
     <>
       <h1>About</h1>
-
       <ul>
         <li>MofuMofu</li>
         <li>

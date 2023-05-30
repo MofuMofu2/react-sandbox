@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { About } from "./component/About/About";
 import reportWebVitals from "./reportWebVitals";
+import { Login } from "./component/Login/Login";
 
 // 開発モードのときはAPIモックを起動する
 if (process.env.NODE_ENV === "development") {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/about",
