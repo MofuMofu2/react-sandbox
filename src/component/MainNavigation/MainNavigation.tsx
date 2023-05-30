@@ -10,7 +10,6 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
 ];
 
 const MainNavigation = () => {
