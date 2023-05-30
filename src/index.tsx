@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { About } from "./component/About/About";
@@ -13,10 +18,19 @@ if (process.env.NODE_ENV === "development") {
   worker.start();
 }
 
+// 認証情報を持っているかチェックする
+const CheckAuth = () => {
+  return sessionStorage.getItem("is-authenticated") ? (
+    <Route path="/" />
+  ) : (
+    <Navigate to="/login" replace />
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <CheckAuth />,
   },
   {
     path: "/login",
