@@ -8,7 +8,7 @@
     "test:unit": "jest",
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
-    "prepare": "husky install",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.ts": "prettier --write",

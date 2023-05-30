@@ -3,22 +3,12 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import ReactPage from "./react-page";
-import Todo from "./todo-app";
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "react-page",
-    element: <ReactPage />,
-  },
-  {
-    path: "todo-app",
-    element: <Todo />,
   },
 ]);
 
