@@ -1,53 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Navigate,
-} from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import { About } from "./component/About/About";
 import reportWebVitals from "./reportWebVitals";
-import { Login } from "./component/Login/Login";
-
-// 開発モードのときはAPIモックを起動する
-if (process.env.NODE_ENV === "development") {
-  const { worker } = require("./mocks/browser");
-  worker.start();
-}
-
-// 認証情報を持っているかチェックする
-const CheckAuth = () => {
-  return sessionStorage.getItem("is-authenticated") ? (
-    <Route path="/" />
-  ) : (
-    <Navigate to="/login" replace />
-  );
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <CheckAuth />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-]);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 
