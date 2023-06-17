@@ -1,4 +1,12 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, useLoaderData, redirect } from "react-router-dom";
+import { updateContact } from "../contacts";
+
+export async function action({ request, params }: any) {
+  const formData = await request.formData(); // フォーム内容を送信するためFormDataオブジェクトを作成
+  const updates = Object.fromEntries(formData); // データをオブジェクトに変換
+  await updateContact(params.contactId, updates); // リクエスト処理
+  return redirect(`/contacts/${params.contactId}`); // contactページにリダイレクト
+}
 
 export default function EditContact() {
   const { contact } = useLoaderData() as any;
