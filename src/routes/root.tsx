@@ -1,4 +1,4 @@
-import { Outlet, Link, useLoaderData, Form } from "react-router-dom";
+import { Outlet, Link, useLoaderData, Form, redirect } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 import { Key } from "react";
 
@@ -8,8 +8,8 @@ export async function loader() {
 }
 
 export async function action() {
-  const contact = await createContact();
-  return { contact };
+  const contact = await createContact(); // { id: "new", createdAt: unixtime }を返す
+  return redirect(`/contacts/${contact.id}`); // idを使ってcontactページにリダイレクト
 }
 
 export default function Root() {
