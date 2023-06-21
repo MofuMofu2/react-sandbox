@@ -1,6 +1,7 @@
 import {
   Outlet,
   useLoaderData,
+  useNavigation,
   Form,
   NavLink,
   redirect,
@@ -20,6 +21,7 @@ export async function action() {
 
 export default function Root() {
   const contacts = useLoaderData() as any[];
+  const navigation = useNavigation();
   return (
     <>
       <div id="sidebar">
@@ -77,7 +79,10 @@ export default function Root() {
           )}
         </nav>
       </div>
-      <div id="detail">
+      <div
+        id="detail"
+        className={navigation.state === "loading" ? "loading" : ""}
+      >
         <Outlet />
       </div>
     </>
