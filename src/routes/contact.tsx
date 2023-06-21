@@ -52,7 +52,7 @@ export default function Contact() {
           <Form action="edit">
             <button type="submit">Edit</button>
           </Form>
-          <Form method="post" action="destory" onSubmit={() => {}}>
+          <Form method="post" action="destroy" onSubmit={() => {}}>
             <button type="submit">Delete</button>
           </Form>
         </div>
