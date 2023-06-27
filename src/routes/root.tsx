@@ -9,8 +9,10 @@ import {
 import { getContacts, createContact } from "../contacts";
 import { Key } from "react";
 
-export async function loader() {
-  const contacts = await getContacts();
+export async function loader({ request }: any) {
+  const url = new URL(request.url); // URLオブジェクトを取得
+  const q = url.searchParams.get("q"); // 検索クエリを取得
+  const contacts = await getContacts(q); // 検索クエリを使ってcontactsを取得
   return contacts;
 }
 
@@ -27,7 +29,7 @@ export default function Root() {
       <div id="sidebar">
         <h1>React Router Contacts</h1>
         <div>
-          <form id="search-form" role="search">
+          <Form id="search-form" role="search">
             <input
               id="q"
               aria-label="Search contacts"
@@ -37,7 +39,7 @@ export default function Root() {
             />
             <div id="search-spinner" aria-hidden hidden={true} />
             <div className="sr-only" aria-live="polite"></div>
-          </form>
+          </Form>
           <Form method="post">
             <button type="submit">New</button>
           </Form>
