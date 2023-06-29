@@ -5,6 +5,7 @@ import {
   Form,
   NavLink,
   redirect,
+  useSubmit,
 } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 import { Key } from "react";
@@ -24,6 +25,7 @@ export async function action() {
 export default function Root() {
   const contacts = useLoaderData() as any[];
   const navigation = useNavigation();
+  const submit = useSubmit();
   return (
     <>
       <div id="sidebar">
@@ -36,6 +38,9 @@ export default function Root() {
               placeholder="Search"
               type="search"
               name="q"
+              onChange={(event) => {
+                submit(event.currentTarget.form);
+              }}
             />
             <div id="search-spinner" aria-hidden hidden={true} />
             <div className="sr-only" aria-live="polite"></div>
