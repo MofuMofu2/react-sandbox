@@ -26,6 +26,10 @@ export default function Root() {
   const contacts = useLoaderData() as any[];
   const navigation = useNavigation();
   const submit = useSubmit();
+
+  const searching =
+    navigation.location &&
+    new URLSearchParams(navigation.location.search).has("q");
   return (
     <>
       <div id="sidebar">
@@ -38,11 +42,12 @@ export default function Root() {
               placeholder="Search"
               type="search"
               name="q"
+              className={searching ? "loading" : ""}
               onChange={(event) => {
                 submit(event.currentTarget.form);
               }}
             />
-            <div id="search-spinner" aria-hidden hidden={true} />
+            <div id="search-spinner" aria-hidden hidden={!searching} />
             <div className="sr-only" aria-live="polite"></div>
           </Form>
           <Form method="post">
