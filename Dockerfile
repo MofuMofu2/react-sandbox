@@ -4,7 +4,7 @@ FROM nginx:alpine
 COPY build/ /usr/share/nginx/html
 # Nginxの設定ファイルをコピーする
 COPY nginx.conf /etc/nginx/conf.d/nginx.conf
-# ポート80を公開する
+# Docker起動時に80番ポートを開放することを伝える
 EXPOSE 80
 # Nginxを起動する
 CMD ["nginx", "-g", "daemon off;"]
