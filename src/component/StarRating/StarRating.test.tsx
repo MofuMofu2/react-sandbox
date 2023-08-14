@@ -3,16 +3,19 @@ import { getAllByTitle, render } from "@testing-library/react";
 import StarRating from "./";
 import userEvent from "@testing-library/user-event";
 import exp from "constants";
-it("星がレンダリングされている", () => {
+it("初期状態", () => {
   const screen = render(<StarRating />);
   const stars = screen.getAllByTitle("red");
+  // 赤い星は3つ
   expect(stars).toHaveLength(3);
-
+  // 灰色の星は3つ
   const greyStars = screen.getAllByTitle("grey");
   expect(greyStars).toHaveLength(2);
+  // テキスト
+  expect(screen.getByText("3 of 5 Stars")).toBeTruthy();
 });
 
-it("クリックするとレーティングの数が変わる", async () => {
+it("クリックするとレーティングの数とテキストが変わる", async () => {
   // イベント検知のセットアップ
   const event = userEvent.setup();
   const screen = render(<StarRating />);
@@ -25,4 +28,6 @@ it("クリックするとレーティングの数が変わる", async () => {
   await event.click(Stars[0]);
   // クリックしたindex + 1の数だけ星が赤くなる
   expect(screen.getAllByTitle("red")).toHaveLength(1);
+  // テキストの状態も変化する
+  expect(screen.getByText("1 of 5 Stars")).toBeTruthy();
 });

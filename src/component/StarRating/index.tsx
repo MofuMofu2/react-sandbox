@@ -11,6 +11,7 @@ export default function StarRating({ totalStars = 5 }): JSX.Element {
           onSelect={() => setSelectedStars(i + 1)}
         />
       ))}
+      <p>{`${selectedStars} of ${totalStars} Stars`}</p>
     </>
   );
 }
