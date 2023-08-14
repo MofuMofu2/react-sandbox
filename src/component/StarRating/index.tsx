@@ -1,14 +1,13 @@
 import React from "react";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function StarRating() {
+import Star from "../Star";
+export default function StarRating({ totalStars = 5 }): JSX.Element {
   return (
     <>
-      <FontAwesomeIcon icon={faStar} title="red" color="red" />
-      <FontAwesomeIcon icon={faStar} title="red" color="red" />
-      <FontAwesomeIcon icon={faStar} title="red" color="red" />
-      <FontAwesomeIcon icon={faStar} title="grey" color="grey" />
-      <FontAwesomeIcon icon={faStar} title="grey" color="grey" />
+      {[...Array(totalStars)].map((n, i) => (
+        <Star key={i} />
+      ))}
     </>
   );
 }
