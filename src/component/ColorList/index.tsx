@@ -3,7 +3,7 @@ import Color, { type Colors } from "../Color";
 
 type ColorListProps = {
   colors: Colors[];
-  onRemove: (element: React.MouseEvent<HTMLButtonElement>) => void;
+  onRemoveColor: (id: string) => void;
 };
 
 export default function ColorList({ ...props }: ColorListProps) {
@@ -18,7 +18,7 @@ export default function ColorList({ ...props }: ColorListProps) {
           title={color.title}
           color={color.color}
           rating={color.rating}
-          onRemove={() => {}}
+          onRemove={props.onRemoveColor}
         />
       ))}
     </div>

@@ -9,7 +9,7 @@ export type Colors = {
 };
 
 type ColorProps = {
-  onRemove: (element: React.MouseEvent<HTMLButtonElement>) => void;
+  onRemove: (id: string) => void;
 } & Colors;
 
 export default function Color({ ...props }: ColorProps) {
@@ -17,8 +17,8 @@ export default function Color({ ...props }: ColorProps) {
     <section>
       <h1>{props.title}</h1>
       <button
-        onClick={(element) => {
-          props.onRemove(element);
+        onClick={() => {
+          props.onRemove(props.id);
         }}
       >
         remove

@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import colorData from "../assets/color-data.json";
 import ColorList from "../component/ColorList";
-import StarRating from "../component/StarRating";
 export default function Root() {
-  const [colors] = useState(colorData);
+  const [colors, setColors] = useState(colorData);
+
+  const removeColor = (id: string) => {
+    const newColors = colors.filter((color) => color.id !== id);
+    setColors(newColors);
+  };
+
   return (
-    <p>
-      <ColorList colors={colors} />
-    </p>
+    <>
+      <ColorList colors={colors} onRemoveColor={removeColor} />
+    </>
   );
 }
