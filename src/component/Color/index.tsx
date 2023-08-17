@@ -1,13 +1,16 @@
 import React from "react";
 import StarRating from "../StarRating";
 
-type ColorProps = {
+export type Colors = {
   id: string;
   title: string;
   color: string;
   rating: number;
-  onRemove: (element: React.MouseEvent<HTMLButtonElement>) => void;
 };
+
+type ColorProps = {
+  onRemove: (element: React.MouseEvent<HTMLButtonElement>) => void;
+} & Colors;
 
 export default function Color({ ...props }: ColorProps) {
   return (

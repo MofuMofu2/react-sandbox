@@ -1,15 +1,9 @@
 import React from "react";
-import Color from "../Color";
-
-type Colors = {
-  id: string;
-  title: string;
-  color: string;
-  rating: number;
-};
+import Color, { type Colors } from "../Color";
 
 type ColorListProps = {
   colors: Colors[];
+  onRemove: (element: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export default function ColorList({ ...props }: ColorListProps) {
@@ -20,9 +14,11 @@ export default function ColorList({ ...props }: ColorListProps) {
       {props.colors.map((color) => (
         <Color
           key={color.id}
+          id={color.id}
           title={color.title}
           color={color.color}
           rating={color.rating}
+          onRemove={() => {}}
         />
       ))}
     </div>
