@@ -4,7 +4,7 @@ type AddColorFormProps = {
   onNewColor: (title: string, color: string) => void;
 };
 
-export default function AddColorFormProps({ ...props }: AddColorFormProps) {
+export default function AddColorForm({ ...props }: AddColorFormProps) {
   const [title, setTitle] = useState("");
   const [color, setColor] = useState("#000000");
 
@@ -22,13 +22,15 @@ export default function AddColorFormProps({ ...props }: AddColorFormProps) {
         onChange={(event) => setTitle(event.target.value)}
         type="text"
         placeholder="color title..."
+        aria-label="title"
         required
       />
       <input
         value={color}
         onChange={(event) => setColor(event.target.value)}
-        type="text"
+        type="color"
         placeholder="color"
+        aria-label="color"
         required
       />
       <button>ADD</button>
