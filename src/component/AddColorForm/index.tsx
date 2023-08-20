@@ -19,13 +19,13 @@ export default function AddColorForm({ ...props }: AddColorFormProps) {
   return (
     <form onSubmit={submit}>
       <input
-        {...props}
+        {...titleProps}
         type="text"
         placeholder="color title"
         aria-label="title"
         required
       />
-      <input {...props} type="color" aria-label="color" required />
+      <input {...colorProps} type="color" aria-label="color" required />
       <button>ADD</button>
     </form>
   );
