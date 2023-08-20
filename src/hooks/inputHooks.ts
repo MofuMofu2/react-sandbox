@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-export const useInput = (initialValue: string) => {
+type UseInputType = [
+  {
+    value: string;
+    onChange: (e: React.FormEvent) => void;
+  },
+  () => void
+];
+
+export const useInput = (initialValue: string): UseInputType => {
   const [value, setValue] = useState(initialValue);
   return [
     // フォームの値とonChangeイベントハンドラを返す
