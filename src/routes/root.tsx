@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import colorData from "../assets/color-data.json";
 import ColorList from "../component/ColorList";
+import AddColorForm from "../component/AddColorForm";
+import { v4 } from "uuid";
+
 export default function Root() {
   const [colors, setColors] = useState(colorData);
 
@@ -11,6 +14,12 @@ export default function Root() {
 
   return (
     <>
+      <AddColorForm
+        onNewColor={(title, color) => {
+          const newColors = [...colors, { id: v4(), rating: 0, title, color }];
+          setColors(newColors);
+        }}
+      />
       <ColorList colors={colors} onRemoveColor={removeColor} />
     </>
   );
