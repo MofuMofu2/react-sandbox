@@ -1,5 +1,6 @@
 import React from "react";
 import StarRating from "../StarRating";
+import { useColors } from "../ColorProvider";
 
 export type Colors = {
   id: string;
@@ -8,23 +9,20 @@ export type Colors = {
   rating: number;
 };
 
-type ColorProps = {
-  onRemove: (id: string) => void;
-} & Colors;
-
-export default function Color({ ...props }: ColorProps) {
+export default function Color({ id, title, color, rating }: Colors) {
+  const { rateColor, removeColor } = useColors();
   return (
     <section>
-      <h1>{props.title}</h1>
+      <h1>{title}</h1>
       <button
         onClick={() => {
-          props.onRemove(props.id);
+          removeColor(id);
         }}
       >
         remove
       </button>
-      <div style={{ height: 50, backgroundColor: props.color }}></div>
-      <StarRating selectedStars={props.rating} />
+      <div style={{ height: 50, backgroundColor: color }}></div>
+      <StarRating selectedStars={rating} />
     </section>
   );
 }
