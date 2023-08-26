@@ -5,11 +5,11 @@ import { useColors } from "../ColorProvider";
 export default function AddColorForm() {
   const [titleProps, resetTitle] = useInput("");
   const [colorProps, resetColor] = useInput("#000000");
-  const addColor = (title: string, color: string) => useColors();
+  const AddColor = (title: string, color: string) => useColors();
 
   const submit = (event: React.FormEvent) => {
     event.preventDefault();
-    addColor(titleProps.value, colorProps.value);
+    AddColor(titleProps.value, colorProps.value);
     resetTitle();
     resetColor();
   };
