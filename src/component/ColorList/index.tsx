@@ -1,5 +1,4 @@
 import React from "react";
-import { ColorContext } from "../..";
 import Color, { Colors } from "../Color";
 import { useColors } from "../ColorProvider";
 

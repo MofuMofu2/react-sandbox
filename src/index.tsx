@@ -5,16 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import colors from "./assets/color-data.json";
 
-export const ColorContext = createContext({ ...colors });
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ColorContext.Provider value={{ ...colors }}>
-      <App />
-    </ColorContext.Provider>
+    <App />
   </React.StrictMode>
 );
 
