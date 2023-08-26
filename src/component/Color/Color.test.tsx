@@ -13,7 +13,6 @@ it("Propsされた値が画面にレンダリングされていること", () =>
       title={props.title}
       color={props.color}
       rating={props.rating}
-      onRemove={jest.fn()}
     />
   );
   // テキストがレンダリングされている
@@ -34,7 +33,6 @@ it("削除ボタンをクリックするとイベント発火する", async () =
       title={props.title}
       color={props.color}
       rating={props.rating}
-      onRemove={handleEvent}
     />
   );
 
