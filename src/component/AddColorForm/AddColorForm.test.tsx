@@ -6,7 +6,7 @@ import AddColorForm from ".";
 it("タイトルフォームに値を入力するとフォームテキストにも反映される", async () => {
   // イベント検知のセットアップ
   const event = userEvent.setup();
-  const content = render(<AddColorForm onNewColor={jest.fn()} />);
+  const content = render(<AddColorForm />);
 
   // フォームに値を入力する
   const form = content.getByLabelText("title");
@@ -17,7 +17,7 @@ it("タイトルフォームに値を入力するとフォームテキストに�
 });
 
 it("色の入力フォームの値を変更するとフォームにも反映される", async () => {
-  const content = render(<AddColorForm onNewColor={jest.fn()} />);
+  const content = render(<AddColorForm />);
 
   // colorフォームの値を更新する
   const form = content.getByLabelText("color");
