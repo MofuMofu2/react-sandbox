@@ -4,7 +4,6 @@ import { v4 } from "uuid";
 import { Colors } from "../Color";
 
 const ColorContext = createContext<any>(undefined);
-
 export const useColors = () => useContext(ColorContext);
 
 export default function ColorProvider({ children }: any) {
