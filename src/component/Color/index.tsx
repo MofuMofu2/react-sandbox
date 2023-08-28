@@ -10,7 +10,7 @@ export type Colors = {
 };
 
 export default function Color({ id, title, color, rating }: Colors) {
-  const { rateColor, removeColor } = useColors();
+  const { removeColor } = useColors();
   return (
     <section>
       <h1>{title}</h1>
