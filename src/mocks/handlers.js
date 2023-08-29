@@ -12,19 +12,6 @@ export const handlers = [
 
   // ユーザー情報の取得用のモック
   rest.get('/user', (req, res, ctx) => {
-    // セッションが存在するか
-    const isAuthenticated = sessionStorage.getItem('is-authenticated')
-
-    if (!isAuthenticated) {
-      // 未認証ならログイン画面にリダイレクト
-      return res(
-        ctx.status(302),
-        ctx.json({
-          errorMessage: 'redirect to login',
-        }),
-      )
-    }
-
     return res(
       ctx.status(200),
       ctx.json({
