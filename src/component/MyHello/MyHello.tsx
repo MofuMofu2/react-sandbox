@@ -2,6 +2,6 @@ type MyHelloProps = {
   myName: string;
 };
 
-export default function MyHello(props: MyHelloProps) {
-  return <div>こんにちは、{props.myName}さん！</div>;
+export default function MyHello({ myName }: MyHelloProps) {
+  return <div>こんにちは、{myName}さん！</div>;
 }
