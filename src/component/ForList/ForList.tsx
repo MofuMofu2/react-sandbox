@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { Fragment } from "react";
 type ForListProps = {
   src: BookSrc[];
 };
@@ -16,7 +15,7 @@ export default function ForList({ src }: ForListProps) {
   return (
     <dl>
       {src.map((element) => (
-        <>
+        <Fragment key={element.isbn}>
           <dt>
             <a
               href={`https://wings.msn.to/books/${element.isbn}/${element.isbn}.jpg`}
@@ -25,7 +24,7 @@ export default function ForList({ src }: ForListProps) {
             </a>
           </dt>
           <dd>{element.summary}</dd>
-        </>
+        </Fragment>
       ))}
     </dl>
   );
