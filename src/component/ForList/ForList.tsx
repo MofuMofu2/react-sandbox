@@ -13,7 +13,7 @@ export type BookSrc = {
 };
 
 export default function ForList({ src }: ForListProps) {
-  const lowPrice = src.filter((book) => book.price < 3500);
+  const lowPrice = src.sort((a, b) => a.price - b.price);
   return (
     <dl>
       {lowPrice.map((element) => (
