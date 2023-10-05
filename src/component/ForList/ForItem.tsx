@@ -1,3 +1,4 @@
+import React from "react";
 import { BookSrc } from "./ForList";
 
 type ForItemProps = {
