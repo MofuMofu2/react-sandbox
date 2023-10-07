@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import ForList from "./component/ForList/ForList";
-import { books } from "./component/ForList/books";
+import StyledPanel from "./component/StyledPanel/StyledPanel";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
@@ -14,7 +13,14 @@ if (process.env.NODE_ENV === "development") {
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(<ForList src={books} />);
+root.render(
+  <StyledPanel>
+    <>
+      <p>メンバー募集中</p>
+      <p>ようこそ、WINGSプロジェクトへ！</p>
+    </>
+  </StyledPanel>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
