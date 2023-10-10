@@ -1,10 +1,11 @@
 import React from "react";
 
 type StyledPanelProps = {
-  children: JSX.Element;
+  title: JSX.Element;
+  body: JSX.Element;
 };
 
-export default function StyledPanel({ children }: StyledPanelProps) {
+export default function StyledPanel(children: StyledPanelProps) {
   return (
     <div
       style={{
@@ -16,7 +17,9 @@ export default function StyledPanel({ children }: StyledPanelProps) {
         backgroundColor: "#fff",
       }}
     >
-      {children}
+      {children.title}
+      <hr />
+      {children.body}
     </div>
   );
 }

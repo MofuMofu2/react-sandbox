@@ -14,12 +14,10 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <StyledPanel>
-    <>
-      <p>メンバー募集中</p>
-      <p>ようこそ、WINGSプロジェクトへ！</p>
-    </>
-  </StyledPanel>
+  <StyledPanel
+    title={<p>メンバー募集中</p>}
+    body={<p>ようこそ、WINGSプロジェクトへ！</p>}
+  />
 );
 
 // If you want to start measuring performance in your app, pass a function
