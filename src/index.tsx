@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import StyledPanel from "./component/StyledPanel/StyledPanel";
+import ListTemplate from "./component/ListTemplate/ListTemplate";
+import { books } from "./component/ForList/books";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
@@ -14,10 +15,17 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <StyledPanel>
-    <p key="title">メンバー募集中</p>
-    <p key="body">ようこそ、WINGSプロジェクトへ！</p>
-  </StyledPanel>
+  <ListTemplate src={books}>
+    <div>
+      {" "}
+      <dt>
+        <span>
+          {element.title} ({element.price}円)
+        </span>
+      </dt>
+      <dd>{element.summary}</dd>
+    </div>
+  </ListTemplate>
 );
 
 // If you want to start measuring performance in your app, pass a function
