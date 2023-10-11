@@ -16,15 +16,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <ListTemplate src={books}>
-    <div>
-      {" "}
-      <dt>
-        <span>
-          {element.title} ({element.price}円)
-        </span>
-      </dt>
-      <dd>{element.summary}</dd>
-    </div>
+    {(element) => (
+      <>
+        <dt>
+          <span>
+            {element.title} ({element.price}円)
+          </span>
+        </dt>
+        <dd>{element.summary}</dd>
+      </>
+    )}
   </ListTemplate>
 );
 
