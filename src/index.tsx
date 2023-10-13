@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import ListTemplate from "./component/ListTemplate/ListTemplate";
-import { books } from "./component/ForList/books";
+import EventMouse from "./component/EventMouse/EventMouse";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
@@ -14,20 +13,8 @@ if (process.env.NODE_ENV === "development") {
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(
-  <ListTemplate src={books}>
-    {(element) => (
-      <>
-        <dt>
-          <span>
-            {element.title} ({element.price}円)
-          </span>
-        </dt>
-        <dd>{element.summary}</dd>
-      </>
-    )}
-  </ListTemplate>
-);
+
+root.render(<EventMouse />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
