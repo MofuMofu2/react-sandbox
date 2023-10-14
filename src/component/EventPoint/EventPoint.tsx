@@ -21,18 +21,10 @@ export default function EventPoint() {
 
   return (
     <div id="main" onMouseMove={handleMousemove}>
-      <p>
-        screen: {screen.x}/{screen.y}
-      </p>
-      <p>
-        page: {page.x}/{page.y}
-      </p>
-      <p>
-        client: {client.x}/{client.y}
-      </p>
-      <p>
-        offset: {offset.x}/{offset.y}
-      </p>
+      screen: {screen.x}/{screen.y}
+      page: {page.x}/{page.y}
+      client: {client.x}/{client.y}
+      offset: {offset.x}/{offset.y}
     </div>
   );
 }
