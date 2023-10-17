@@ -7,18 +7,25 @@ export default function FormSelect() {
     animal: "",
   });
 
+  const handleForm = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   return (
-    <form>
-      <label htmlFor="animal">好きなどうぶつは？</label>
-      <select id="animal" name="animal">
-        {animals.map((animal) => (
-          <AnimalOptions
-            name={animal.name}
-            value={animal.value}
-            key={animal.value}
-          />
-        ))}
-      </select>
-    </form>
+    <>
+      <form>
+        <label htmlFor="animal">好きなどうぶつは？</label>
+        <select id="animal" name="animal" onChange={handleForm}>
+          {animals.map((animal) => (
+            <AnimalOptions
+              name={animal.name}
+              value={animal.value}
+              key={animal.value}
+            />
+          ))}
+        </select>
+      </form>
+      <p>{`好きな動物は ${form.animal} です。`}</p>
+    </>
   );
 }
