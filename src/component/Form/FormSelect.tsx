@@ -11,6 +11,12 @@ export default function FormSelect() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const searchName = (animal: string) => {
+    const param = animals.find((param) => param.value === animal);
+
+    return param !== undefined ? param.name : "まだ決めてない";
+  };
+
   return (
     <>
       <form>
@@ -25,7 +31,7 @@ export default function FormSelect() {
           ))}
         </select>
       </form>
-      <p>{`好きな動物は ${form.animal} です。`}</p>
+      <p>{`好きな動物は ${searchName(form.animal)} です。`}</p>
     </>
   );
 }
