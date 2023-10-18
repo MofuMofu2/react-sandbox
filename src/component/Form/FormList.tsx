@@ -33,6 +33,7 @@ export default function FormList() {
           value={form.animal}
           size={4}
           multiple={true}
+          onChange={handleFormList}
         >
           {animals.map((animal) => (
             <AnimalOptions
