@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import FormRadio from "./component/Form/FormRadio";
+import FormCheck from "./component/Form/FormCheck";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-root.render(<FormRadio />);
+root.render(<FormCheck />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
