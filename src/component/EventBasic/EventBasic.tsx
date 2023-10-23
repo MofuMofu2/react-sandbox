@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, useState } from "react";
+import React, { useState } from "react";
 
 export default function EventBasic() {
   const [now, setNow] = useState("click button");
