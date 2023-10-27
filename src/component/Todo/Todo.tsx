@@ -29,6 +29,16 @@ export default function Todo() {
     ]);
   };
 
+  const handleDone = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setTodo(
+      todo.map((item) => {
+        return item.id === Number(e.currentTarget.dataset.id)
+          ? { ...item, isDone: true }
+          : item;
+      })
+    );
+  };
+
   return (
     <div>
       <label htmlFor="title">やること：</label>
@@ -44,7 +54,12 @@ export default function Todo() {
       <hr />
       <ul>
         {todo.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            {item.title}
+            <button type="button" onClick={handleDone} data-id={item.id}>
+              DONE
+            </button>
+          </li>
         ))}
       </ul>
     </div>
