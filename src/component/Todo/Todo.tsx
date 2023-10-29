@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Todo.modules.css";
 
 type TodoTask = {
   id: number;
@@ -54,7 +55,7 @@ export default function Todo() {
       <hr />
       <ul>
         {todo.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className={item.isDone ? "done" : ""}>
             {item.title}
             <button type="button" onClick={handleDone} data-id={item.id}>
               DONE
