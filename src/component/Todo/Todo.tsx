@@ -40,6 +40,14 @@ export default function Todo() {
     );
   };
 
+  const handleRemove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setTodo(
+      todo.filter((item) => {
+        return item.id !== Number(e.currentTarget.dataset.id);
+      })
+    );
+  };
+
   return (
     <div>
       <label htmlFor="title">やること：</label>
@@ -59,6 +67,9 @@ export default function Todo() {
             {item.title}
             <button type="button" onClick={handleDone} data-id={item.id}>
               DONE
+            </button>
+            <button type="button" onClick={handleRemove} data-id={item.id}>
+              REMOVE
             </button>
           </li>
         ))}
