@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import LazyBasic from "./component/Lazy/LazyBasic";
+import LazyBasic from "./component/Suspense/Lazy/LazyBasic";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
