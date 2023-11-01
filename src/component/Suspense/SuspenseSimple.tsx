@@ -1,17 +1,15 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 function PromiseComponent() {
   const [flag, setFlag] = useState(false);
-  if (flag) {
-    return <p>正しく表示できました</p>;
-  }
 
-  throw new Promise((resolve, reject) => {
+  useEffect(() => {
     setTimeout(() => {
       setFlag(true);
-      resolve("Success");
     }, 3000);
-  });
+  }, []);
+
+  return <p>{flag ? "正しく表示できました" : "まだです"}</p>;
 }
 
 export default function SuspenseSimple() {
