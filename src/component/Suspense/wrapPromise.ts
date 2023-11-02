@@ -15,14 +15,14 @@ export function wrapPromise(promise: Promise<Result>) {
     }
   );
 
-  return function () {
+  return function get(): string {
     switch (status) {
       case "pending":
         throw wrapper;
       case "fulfilled":
-        throw data;
+        return data;
       case "rejected":
-        throw data;
+        return data;
     }
   };
 }
