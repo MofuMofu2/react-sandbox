@@ -8,8 +8,22 @@ export default function EventMouse() {
   const handleLeave = () => setCurrent("blue");
 
   return (
-    <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-      <FontAwesomeIcon icon={faGrinStars} color={current} title="happy-face" />
-    </div>
+    <>
+      <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+        <FontAwesomeIcon
+          icon={faGrinStars}
+          color={current}
+          title="happy-face"
+        />
+        ここに出るよ
+        {current === "red" ? (
+          <div>
+            <a href="https://example.com/">example.com</a>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+    </>
   );
 }
