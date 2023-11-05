@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
+import "./PortalBasic.css";
 
 export default function PortalBasic() {
   const [show, setShow] = useState(false);
