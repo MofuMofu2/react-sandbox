@@ -1,11 +1,8 @@
 import React from "react";
 
-import { WithTranslation, withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-function Language({ t }: WithTranslation) {
+export default function ChangeLanguage() {
+  const [t] = useTranslation();
   return <h1>{t("welcome")}</h1>;
 }
-
-const ChangeLanguage = withTranslation()(Language);
-
-export default ChangeLanguage;
