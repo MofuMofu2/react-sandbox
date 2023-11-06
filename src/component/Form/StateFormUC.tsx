@@ -21,7 +21,7 @@ export default function StateFormUC() {
         <input id="age" name="age" type="text" ref={age} defaultValue={18} />
       </div>
       <p>
-        こんにちは、{name !== null ? `${name}` : `名前を入力してください`}{" "}
+        こんにちは、{name !== null ? `${name}` : "名前を入力してください"}{" "}
         {`${age} 歳`}さん！
       </p>
     </form>

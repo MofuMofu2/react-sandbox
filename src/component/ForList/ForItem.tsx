@@ -1,9 +1,9 @@
 import React from "react";
-import { BookSrc } from "./ForList";
+import { type BookSrc } from "./ForList";
 
-type ForItemProps = {
+interface ForItemProps {
   book: BookSrc;
-};
+}
 
 export default function ForItem({ book }: ForItemProps) {
   return (

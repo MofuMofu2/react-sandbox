@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-type StateBasicProps = {
+interface StateBasicProps {
   init: number;
-};
+}
 
 export default function StateBasic({ init }: StateBasicProps) {
   const [count, setCount] = useState(init);

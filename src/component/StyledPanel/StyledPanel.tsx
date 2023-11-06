@@ -1,8 +1,8 @@
 import React from "react";
 
-type StyledPanelProps = {
+interface StyledPanelProps {
   children: JSX.Element[];
-};
+}
 
 export default function StyledPanel(children: StyledPanelProps) {
   const title = children.children.find((element) => element.key === "title");

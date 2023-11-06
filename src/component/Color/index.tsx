@@ -2,12 +2,12 @@ import React from "react";
 import StarRating from "../StarRating";
 import { useColors } from "../ColorProvider";
 
-export type Colors = {
+export interface Colors {
   id: string;
   title: string;
   color: string;
   rating: number;
-};
+}
 
 export default function Color({ id, title, color, rating }: Colors) {
   const { removeColor } = useColors();

@@ -1,4 +1,4 @@
-import React, { ComponentType, useTransition } from "react";
+import React, { type ComponentType, useTransition } from "react";
 import ChangeLanguage from "./ChangeLanguage";
 import { render } from "@testing-library/react";
 import i18n from "../../i18n";

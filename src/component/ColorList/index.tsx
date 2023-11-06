@@ -1,5 +1,5 @@
 import React from "react";
-import Color, { Colors } from "../Color";
+import Color, { type Colors } from "../Color";
 import { useColors } from "../ColorProvider";
 
 export default function ColorList() {

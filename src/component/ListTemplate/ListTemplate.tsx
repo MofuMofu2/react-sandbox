@@ -1,10 +1,10 @@
 import React from "react";
-import { BookSrc } from "../ForList/ForList";
+import { type BookSrc } from "../ForList/ForList";
 
-type ListTemplateProps = {
+interface ListTemplateProps {
   children: (src: BookSrc) => JSX.Element;
   src: BookSrc[];
-};
+}
 
 export default function ListTemplate({ src, children }: ListTemplateProps) {
   return (

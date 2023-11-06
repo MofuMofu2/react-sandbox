@@ -24,7 +24,7 @@ export default function FormCheck() {
           onChange={handleFormCheck}
         />
       </form>
-      <p>{form.agreement ? `同意する` : "同意しない"}</p>
+      <p>{form.agreement ? "同意する" : "同意しない"}</p>
     </>
   );
 }

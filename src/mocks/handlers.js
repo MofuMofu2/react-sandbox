@@ -1,22 +1,20 @@
-import { rest } from 'msw'
+import { rest } from "msw";
 
 export const handlers = [
   // ログイン用のモック
-  rest.post('/login', (req, res, ctx) => {
-    sessionStorage.setItem('is-authenticated', 'true')
+  rest.post("/login", async (req, res, ctx) => {
+    sessionStorage.setItem("is-authenticated", "true");
 
-    return res(
-      ctx.status(200),
-    )
+    return await res(ctx.status(200));
   }),
 
   // ユーザー情報の取得用のモック
-  rest.get('/user', (req, res, ctx) => {
-    return res(
+  rest.get("/user", async (req, res, ctx) => {
+    return await res(
       ctx.status(200),
       ctx.json({
-        username: 'mofu',
-      }),
-    )
+        username: "mofu",
+      })
+    );
   }),
-]
+];

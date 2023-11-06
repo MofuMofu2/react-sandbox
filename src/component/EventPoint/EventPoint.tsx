@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./EventPoint.css";
 
-type Position = {
+interface Position {
   x: number;
   y: number;
-};
+}
 
 export default function EventPoint() {
   const [screen, setScreen] = useState<Position>({ x: 0, y: 0 });

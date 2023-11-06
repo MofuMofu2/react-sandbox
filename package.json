@@ -7,7 +7,8 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
   },
   "lint-staged": {
     "*.ts": "prettier --write",
@@ -28,7 +29,6 @@
     "jest": "^28.1.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
-    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.3.1",
@@ -45,13 +45,23 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "^18.0.3",
     "@types/uuid": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.7",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "msw": "^1.2.1",
+    "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
   },
@@ -65,18 +75,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "eslintConfig": {
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
     ]
   },
   "msw": {
