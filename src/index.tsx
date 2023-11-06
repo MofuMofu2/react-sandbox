@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
-import ChangeLanguage from "./component/ChangeLanguage/ChangeLanguage";
+import PortalBasic from "./component/Portal/PortalBasic";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
@@ -15,7 +15,12 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-root.render(<ChangeLanguage />);
+root.render(
+  <>
+    <div id="dialog"></div>
+    <PortalBasic />
+  </>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
