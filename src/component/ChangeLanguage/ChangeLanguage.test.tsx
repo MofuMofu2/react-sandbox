@@ -1,10 +1,16 @@
-import React, { useTransition } from "react";
+import React, { ComponentType, useTransition } from "react";
 import ChangeLanguage from "./ChangeLanguage";
 import { render } from "@testing-library/react";
 
-jest.mock("react-i18next", () => {
-  useTransition: jest.fn();
-});
+jest.mock("react-i18next", () => ({
+  withTranslation: () => (Component: ComponentType) => {
+    Component.defaultProps = {
+      ...Component.defaultProps,
+      t: (key: string) => key,
+    };
+    return Component;
+  },
+}));
 
 describe("英語ロケールenを指定したとき", () => {
   it("Welcome to Reactが表示される", () => {
