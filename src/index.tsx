@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import ProfilerBasic from "./component/Profiler/ProfilerBasic";
+import "./i18n";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
