@@ -15,7 +15,9 @@ jest.mock("react-i18next", () => ({
 describe("英語ロケールenを指定したとき", () => {
   it("Welcome to Reactが表示される", () => {
     const screen = render(<ChangeLanguage />);
-    expect(screen.getByText("Welcome to React")).toBeInTheDocument();
+    expect(
+      screen.getByText("Welcome to React and react-i18next!")
+    ).toBeInTheDocument();
   });
 });
 
