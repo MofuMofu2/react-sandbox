@@ -1,20 +1,29 @@
 import React, { ComponentType, useTransition } from "react";
 import ChangeLanguage from "./ChangeLanguage";
 import { render } from "@testing-library/react";
-import { resources, type Resources } from "../../i18n";
+import i18n from "../../i18n";
+import { initReactI18next } from "react-i18next";
 
-const mockWithTranslation = (resources: Resources) => {
-  return () => (Component: ComponentType) => {
-    Component.defaultProps = {
-      ...Component.defaultProps,
-      t: (key: string) => resources["en"].translation[key],
-    };
-    return Component;
-  };
-};
+i18n.use(initReactI18next).init({
+  resources: {
+    en: {
+      translation: {
+        welcome: "Welcome to React",
+        // 他の翻訳もここに追加します
+      },
+    },
+    // 他の言語の翻訳もここに追加します
+  },
+  lng: "en",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 jest.mock("react-i18next", () => ({
-  withTranslation: mockWithTranslation(resources),
+  useTranslation: () => ({ t: (key: string) => key }),
+  withTranslation: () => (Component: ComponentType) => Component,
 }));
 
 describe("英語ロケールenを指定したとき", () => {
