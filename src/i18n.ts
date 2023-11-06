@@ -1,13 +1,12 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-export type Resources = {
-  [lang: string]: {
-    translation: {
-      [key: string]: string;
-    };
-  };
-};
+export type Resources = Record<
+  string,
+  {
+    translation: Record<string, string>;
+  }
+>;
 
 export const resources: Resources = {
   en: {

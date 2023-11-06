@@ -1,7 +1,7 @@
-export type Animal = {
+export interface Animal {
   name: string;
   value: string;
-};
+}
 
 export const animals: Animal[] = [
   { name: "選択してください", value: "" },

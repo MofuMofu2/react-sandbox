@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-type Data = {
+interface Data {
   username: "string";
-};
+}
 
 export default function Root() {
   const [data, setData] = useState<Data | undefined>(undefined);
@@ -29,7 +29,9 @@ export default function Root() {
     const interval = setInterval(fetchData, 10000);
 
     // コンポーネントがアンマウントされたときに実行
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

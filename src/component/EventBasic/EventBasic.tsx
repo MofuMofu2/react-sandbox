@@ -18,8 +18,20 @@ export default function EventBasic() {
   };
   return (
     <div>
-      <button onClick={(e) => current(e, "date")}>現在時刻を取得</button>
-      <button onClick={(e) => current(e, "time")}>現在時間を取得</button>
+      <button
+        onClick={(e) => {
+          current(e, "date");
+        }}
+      >
+        現在時刻を取得
+      </button>
+      <button
+        onClick={(e) => {
+          current(e, "time");
+        }}
+      >
+        現在時間を取得
+      </button>
       <p>{now}</p>
     </div>
   );

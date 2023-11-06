@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Todo.modules.css";
 
-type TodoTask = {
+interface TodoTask {
   id: number;
   title: string;
   created: Date;
   isDone: boolean;
-};
+}
 
 let maxId = 0;
 

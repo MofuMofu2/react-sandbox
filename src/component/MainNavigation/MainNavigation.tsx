@@ -17,13 +17,24 @@ const MainNavigation = () => {
 
   return (
     <div className="dropdown">
-      <button onClick={() => setIsOpen(!isOpen)} className="dropbtn">
+      <button
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+        className="dropbtn"
+      >
         Menu
       </button>
       {isOpen && (
         <div className="dropdown-content">
           {menuItems.map((item, index) => (
-            <Link key={index} to={item.link} onClick={() => setIsOpen(false)}>
+            <Link
+              key={index}
+              to={item.link}
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
               {item.name}
             </Link>
           ))}

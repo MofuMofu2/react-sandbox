@@ -1,16 +1,16 @@
 import React from "react";
 import ForItem from "./ForItem";
-type ForListProps = {
+interface ForListProps {
   src: BookSrc[];
-};
+}
 
-export type BookSrc = {
+export interface BookSrc {
   isbn: string;
   title: string;
   price: number;
   summary: string;
   download: boolean;
-};
+}
 
 export default function ForList({ src }: ForListProps) {
   const lowPrice = src.sort((a, b) => a.price - b.price);

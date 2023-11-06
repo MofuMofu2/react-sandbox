@@ -1,14 +1,14 @@
 import React, { useState, createContext, useContext } from "react";
 import colorData from "../../assets/color-data.json";
 import { v4 } from "uuid";
-import { Colors } from "../Color";
+import { type Colors } from "../Color";
 
 const ColorContext = createContext<any>(undefined);
 export const useColors = () => useContext(ColorContext);
 
 export default function ColorProvider({ children }: any) {
   const [colors, setColors] = useState<Colors[]>(colorData);
-  const addColor = (title: string, color: string) =>
+  const addColor = (title: string, color: string) => {
     setColors([
       ...colors,
       {
@@ -18,6 +18,7 @@ export default function ColorProvider({ children }: any) {
         color,
       },
     ]);
+  };
 
   const rateColor = (id: string, rating: number) => {
     setColors(

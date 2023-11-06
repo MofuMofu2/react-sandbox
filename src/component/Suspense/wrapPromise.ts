@@ -4,7 +4,7 @@ export function wrapPromise(promise: Promise<Result>) {
   let status: Result = "pending";
   let data: string;
 
-  let wrapper = promise.then(
+  const wrapper = promise.then(
     (result) => {
       status = "fulfilled";
       data = result;

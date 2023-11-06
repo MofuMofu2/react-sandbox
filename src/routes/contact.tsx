@@ -1,14 +1,14 @@
 import { Form, useLoaderData, useFetcher } from "react-router-dom";
 import { getContact, updateContact } from "../contacts";
 
-type Contact = {
+interface Contact {
   first: string;
   last: string;
   avatar: string;
   twitter: string;
   notes: string;
   favorite: boolean;
-};
+}
 
 export async function loader({ params }: any) {
   const contact = await getContact(params.contactId);
@@ -22,8 +22,8 @@ export async function loader({ params }: any) {
 }
 
 export async function action({ request, params }: any) {
-  let formData = await request.formData();
-  return updateContact(params.contactId, {
+  const formData = await request.formData();
+  return await updateContact(params.contactId, {
     favorite: formData.get("favorite") === "true",
   });
 }
@@ -53,7 +53,11 @@ export default function Contact() {
 
         {contact.twitter && (
           <p>
-            <a target="_blank" href={`https://twitter.com/${contact.twitter}`}>
+            <a
+              target="_blank"
+              href={`https://twitter.com/${contact.twitter}`}
+              rel="noreferrer"
+            >
               {contact.twitter}
             </a>
           </p>
@@ -74,9 +78,9 @@ export default function Contact() {
   );
 }
 
-type FavoriteProps = {
+interface FavoriteProps {
   contact: Contact;
-};
+}
 
 function Favorite({ ...props }: FavoriteProps) {
   const fetcher = useFetcher();

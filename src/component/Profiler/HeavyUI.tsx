@@ -1,11 +1,11 @@
 import React from "react";
 
-type HeavyUIProps = {
+interface HeavyUIProps {
   delay: number;
-};
+}
 
 const sleep = (delay: number) => {
-  let start = Date.now();
+  const start = Date.now();
   while (Date.now() - start < delay);
 };
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-type UserInfo = {
+interface UserInfo {
   name: string;
   age: number;
-};
+}
 
 export default function StateForm() {
   const [form, setForm] = useState<UserInfo>({ name: "山田太郎", age: 18 });
