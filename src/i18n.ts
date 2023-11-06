@@ -1,7 +1,15 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-const resources = {
+export type Resources = {
+  [lang: string]: {
+    translation: {
+      [key: string]: string;
+    };
+  };
+};
+
+export const resources: Resources = {
   en: {
     translation: {
       welcome: "Welcome to React and react-i18next!",
