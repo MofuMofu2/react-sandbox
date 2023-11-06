@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import i18n from "../../i18n";
 import { initReactI18next } from "react-i18next";
 
-describe("英語ロケールenを指定したとき", () => {
+beforeEach(() => {
   i18n.use(initReactI18next).init({
     resources: {
       en: {
@@ -12,29 +12,6 @@ describe("英語ロケールenを指定したとき", () => {
           welcome: "Welcome to React and react-i18next!",
         },
       },
-    },
-    lng: "en",
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false,
-    },
-  });
-
-  jest.mock("react-i18next", () => ({
-    useTranslation: () => ({ t: (key: string) => key }),
-    withTranslation: () => (Component: ComponentType) => Component,
-  }));
-  it("多言語対応したテキストが表示される", () => {
-    const screen = render(<ChangeLanguage />);
-    expect(
-      screen.getByText("Welcome to React and react-i18next!")
-    ).toBeInTheDocument();
-  });
-});
-
-describe("日本語ロケールjaを指定したとき", () => {
-  i18n.use(initReactI18next).init({
-    resources: {
       ja: {
         translation: {
           welcome: "Reactとreact-i18nextの世界へようこそ！",
@@ -52,7 +29,21 @@ describe("日本語ロケールjaを指定したとき", () => {
     useTranslation: () => ({ t: (key: string) => key }),
     withTranslation: () => (Component: ComponentType) => Component,
   }));
+});
+
+describe("英語ロケールenを指定したとき", () => {
   it("多言語対応したテキストが表示される", () => {
+    i18n.changeLanguage("en");
+    const screen = render(<ChangeLanguage />);
+    expect(
+      screen.getByText("Welcome to React and react-i18next!")
+    ).toBeInTheDocument();
+  });
+});
+
+describe("日本語ロケールjaを指定したとき", () => {
+  it("多言語対応したテキストが表示される", () => {
+    i18n.changeLanguage("ja");
     const screen = render(<ChangeLanguage />);
     expect(
       screen.getByText("Reactとreact-i18nextの世界へようこそ！")
