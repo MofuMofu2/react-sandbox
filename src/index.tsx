@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
-import PortalBasic from "./component/Portal/PortalBasic";
+import StateEffect from "./component/Hooks/StateEffect";
 
 if (process.env.NODE_ENV === "development") {
   void import("./mocks/browser").then(({ worker }) => {
@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <div id="dialog"></div>
-    <PortalBasic />
+    <StateEffect init={0} />
   </>
 );
 
