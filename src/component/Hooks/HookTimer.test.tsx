@@ -10,7 +10,10 @@ it("Propsで渡された値から1秒ずつカウントが減ること", async (
   await act(async () => {
     // 1秒待つ
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    // 9になっていることを確認する
-    expect(screen.getByText("現在のカウント9")).toBeInTheDocument();
   });
+
+  // Reactのstate更新が完了するのを待つ
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  // 9になっていることを確認する
+  expect(screen.getByText("現在のカウント9")).toBeInTheDocument();
 });
