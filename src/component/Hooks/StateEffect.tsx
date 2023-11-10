@@ -12,12 +12,16 @@ export default function StateEffect({ init }: StateEffectProps) {
     console.log(`count is ${count}`);
   }, [count]);
 
-  const handleClick = () => setCount(count + 1);
+  const handleClick = () => {
+    setCount(count + 1);
+  };
 
   return (
     <>
       <button
-        onClick={() => setHoge(Date.now().toString())}
+        onClick={() => {
+          setHoge(Date.now().toString());
+        }}
       >{`Hoge ${hoge}`}</button>
       <button onClick={handleClick}>カウント</button>
       <p>{`${count} 回クリックされた`}</p>
