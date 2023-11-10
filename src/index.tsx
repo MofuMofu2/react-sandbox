@@ -3,13 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
-import StateEffect from "./component/Hooks/StateEffect";
-
-if (process.env.NODE_ENV === "development") {
-  void import("./mocks/browser").then(({ worker }) => {
-    worker.start();
-  });
-}
+import HookTimer from "./component/Hooks/HookTimer";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <div id="dialog"></div>
-    <StateEffect init={0} />
+    <HookTimer init={10} />
   </>
 );
 
