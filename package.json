@@ -8,13 +8,15 @@
     "dev": "react-scripts start",
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
+    "sort-json": "node scripts/sort-json.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "prepare": "husky install",
     "test": "react-scripts test --watchAll=false"
   },
   "lint-staged": {
     "*.ts": "prettier --write",
-    "*.tsx": "prettier --write"
+    "*.tsx": "prettier --write",
+    "*.json": "npm run sort-json"
   },
   "browserslist": {
     "production": [
