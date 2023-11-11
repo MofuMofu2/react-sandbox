@@ -1,21 +1,37 @@
 {
   "name": "reactjs-sandbox",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "MofuMofu2",
   "scripts": {
-    "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "dev": "react-scripts start",
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
+    "format-json": "npm run sort-json && npm run prettify-json",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "prepare": "husky install",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
+    "prettify-json": "prettier --write \"**/*.json\"",
+    "sort-json": "sort-package-json",
+    "test": "react-scripts test --watchAll=false"
   },
   "lint-staged": {
     "*.ts": "prettier --write",
-    "*.tsx": "prettier --write"
+    "*.tsx": "prettier --write",
+    "*.json": "npm run sort-json && npm run prettify-json"
   },
-  "author": "MofuMofu2",
-  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
@@ -65,18 +81,6 @@
     "prop-types": "^15.8.1",
     "sort-package-json": "^2.6.0",
     "webpack": "^5.75.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "msw": {
     "workerDirectory": "public"
