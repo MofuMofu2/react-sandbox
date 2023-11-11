@@ -1,5 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import translationJA from "./translation/ja.json";
+import translationEN from "./translation/en.json";
 
 export type Resources = Record<
   string,
@@ -10,18 +12,14 @@ export type Resources = Record<
 
 export const resources: Resources = {
   en: {
-    translation: {
-      welcome: "Welcome to React and react-i18next!",
-    },
+    translation: translationEN,
   },
   ja: {
-    translation: {
-      welcome: "Reactとreact-i18nextの世界へようこそ！",
-    },
+    translation: translationJA,
   },
 };
 
-i18n.use(initReactI18next).init({
+void i18n.use(initReactI18next).init({
   resources,
   lng: "en",
   interpolation: {
