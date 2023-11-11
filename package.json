@@ -8,17 +8,13 @@
     "dev": "react-scripts start",
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
-    "format-json": "npm run sort-json && npm run prettify-json",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "prepare": "husky install",
-    "prettify-json": "prettier --write \"**/*.json\"",
-    "sort-json": "sort-package-json",
     "test": "react-scripts test --watchAll=false"
   },
   "lint-staged": {
     "*.ts": "prettier --write",
-    "*.tsx": "prettier --write",
-    "*.json": "npm run sort-json && npm run prettify-json"
+    "*.tsx": "prettier --write"
   },
   "browserslist": {
     "production": [
@@ -79,7 +75,6 @@
     "msw": "^1.2.1",
     "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
-    "sort-package-json": "^2.6.0",
     "webpack": "^5.75.0"
   },
   "msw": {
