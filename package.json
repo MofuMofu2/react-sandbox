@@ -63,6 +63,7 @@
     "msw": "^1.2.1",
     "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
+    "sort-package-json": "^2.6.0",
     "webpack": "^5.75.0"
   },
   "browserslist": {
