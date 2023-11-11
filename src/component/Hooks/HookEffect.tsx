@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 type HookEffectProps = {
   init: number;
@@ -17,7 +17,7 @@ export default function HookEffect({ init }: HookEffectProps) {
   const [count, setCount] = useState(0);
   const [hoge, setHoge] = useState("hoge");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     sleep(2000);
     setCount(init);
     // eslint-disable-next-line react-hooks/exhaustive-deps
