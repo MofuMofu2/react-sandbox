@@ -3,13 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
-import PortalBasic from "./component/Portal/PortalBasic";
-
-if (process.env.NODE_ENV === "development") {
-  void import("./mocks/browser").then(({ worker }) => {
-    worker.start();
-  });
-}
+import HookEffect from "./component/Hooks/HookEffect";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <div id="dialog"></div>
-    <PortalBasic />
+    <HookEffect init={10} />
   </>
 );
 
