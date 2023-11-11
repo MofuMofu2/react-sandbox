@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
-import HookTimer from "./component/Hooks/HookTimer";
+import HookEffect from "./component/Hooks/HookEffect";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <div id="dialog"></div>
-    <HookTimer init={10} />
+    <HookEffect init={10} />
   </>
 );
 
