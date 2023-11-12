@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n/i18n";
 import reportWebVitals from "./reportWebVitals";
-import HookEffect from "./component/Hooks/HookEffect";
+import HookEffect from "./component/Hooks/useEffect/HookEffect";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
