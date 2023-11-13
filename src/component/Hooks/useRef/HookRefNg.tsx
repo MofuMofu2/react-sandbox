@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function HookRefNg() {
   const [count, setCount] = useState(0);
-  let id: NodeJS.Timer | null = null;
+  const idRef = useRef<NodeJS.Timer | null>(null);
 
   const handleStart = () => {
-    if (id !== null) {
-      return;
+    if (idRef.current === null) {
+      idRef.current = setInterval(() => {
+        setCount((c) => c + 1);
+      }, 1000);
     }
-    id = setInterval(() => {
-      setCount((c) => c + 1);
-    }, 1000);
   };
 
   const handleEnd = () => {
-    if (id !== null) {
-      clearInterval(id);
-      id = null;
+    if (idRef.current !== null) {
+      clearInterval(idRef.current);
+      idRef.current = null;
     }
   };
 
