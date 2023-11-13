@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n/i18n";
 import reportWebVitals from "./reportWebVitals";
-import HookEffect from "./component/Hooks/useEffect/HookEffect";
+import HookRefNg from "./component/Hooks/useRef/HookRefNg";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <div id="dialog"></div>
-    <HookEffect init={10} />
+    <HookRefNg />
   </>
 );
 
