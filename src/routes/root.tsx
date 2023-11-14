@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../i18n/i18n";
+import i18n from "../i18n/i18n";
 import { useTranslation } from "react-i18next";
 
 interface Data {
@@ -13,12 +13,16 @@ export default function Root() {
 
   const fetchData = async () => {
     try {
+      // この結果は子コンポーネントにPropsしつつ、i18n定義も更新したい。
       const response = await fetch("http://localhost:3000/user");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const param = await response.json();
-      setData(param as Data);
+      if (response.ok) {
+        const param = await response.json();
+        setData(param as Data);
+        await i18n.changeLanguage(param.locale);
+      }
     } catch (error) {
       setData(undefined);
       console.error(error);
