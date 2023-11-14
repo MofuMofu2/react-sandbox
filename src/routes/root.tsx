@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "../i18n/i18n";
+import { useTranslation } from "react-i18next";
 
 interface Data {
   username: "string";
@@ -7,6 +9,7 @@ interface Data {
 
 export default function Root() {
   const [data, setData] = useState<Data | undefined>(undefined);
+  const { t } = useTranslation();
 
   const fetchData = async () => {
     try {
@@ -27,7 +30,5 @@ export default function Root() {
     void fetchData();
   }, []);
 
-  return (
-    <span>{data === undefined ? "データがありません" : data.username}</span>
-  );
+  return <span>{data === undefined ? t("nodata") : t("welcome")}</span>;
 }

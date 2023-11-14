@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./i18n/i18n";
 import reportWebVitals from "./reportWebVitals";
 import Root from "./routes/root";
 import { worker } from "./mocks/browser";
