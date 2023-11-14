@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./i18n/i18n";
 import reportWebVitals from "./reportWebVitals";
 import HookRefNg from "./component/Hooks/useRef/HookRefNg";
 
@@ -11,7 +10,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <>
-    <div id="dialog"></div>
     <HookRefNg />
   </>
 );
