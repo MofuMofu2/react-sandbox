@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 interface Data {
   username: "string";
+  locale: "ja" | "en";
 }
 
 export default function Root() {
@@ -23,15 +24,7 @@ export default function Root() {
 
   useEffect(() => {
     // 初回マウント時に実行
-    fetchData();
-
-    // 10秒ごとに実行
-    const interval = setInterval(fetchData, 10000);
-
-    // コンポーネントがアンマウントされたときに実行
-    return () => {
-      clearInterval(interval);
-    };
+    void fetchData();
   }, []);
 
   return (
