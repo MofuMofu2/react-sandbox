@@ -13,7 +13,8 @@ export const handlers = [
     return await res(
       ctx.status(200),
       ctx.json({
-        username: "mofu",
+        username: "miff",
+        locale: "en"
       })
     );
   }),

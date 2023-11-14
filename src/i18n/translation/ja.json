@@ -1,4 +1,5 @@
 {
   "hello": "こんにちは、react-i18next!",
+  "nodata": "データがありません",
   "welcome": "Reactとreact-i18nextの世界へようこそ！"
 }

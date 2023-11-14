@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./i18n/i18n";
 import reportWebVitals from "./reportWebVitals";
-import HookEffect from "./component/Hooks/HookEffect";
+import Root from "./routes/Root";
+import { worker } from "./mocks/browser";
+
+if (process.env.NODE_ENV === "development") {
+  void worker.start();
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <div id="dialog"></div>
-    <HookEffect init={10} />
+    <Root />
   </>
 );
 
