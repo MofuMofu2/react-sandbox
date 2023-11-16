@@ -16,7 +16,7 @@
   "lint-staged": {
     "*.ts": "prettier --write",
     "*.tsx": "prettier --write",
-    "*.json": "npm run sort-json"
+    "*.json": "prettier --write"
   },
   "browserslist": {
     "production": [
