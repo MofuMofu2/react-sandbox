@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import HookRefNg from "./component/Hooks/useRef/HookRefNg";
+import HookRefForward from "./component/Hooks/useRef/HookRefForward";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <>
-    <HookRefNg />
+    <HookRefForward />
   </>
 );
 
