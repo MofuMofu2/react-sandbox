@@ -5,11 +5,16 @@ interface MyTextBoxProps {
 }
 
 const MyTextBox = forwardRef<HTMLInputElement, MyTextBoxProps>(
-  ({ label }, ref) => (
-    <label>
-      {label}: <input type="text" size={15} ref={ref} />
-    </label>
-  )
+  function MyTextBox(props, ref) {
+    return (
+      <div>
+        <label>{props.label}</label>
+        <input type="text" ref={ref} />
+      </div>
+    );
+  }
 );
+
+MyTextBox.displayName = "MyTextBox";
 
 export default MyTextBox;
