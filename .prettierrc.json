@@ -2,5 +2,14 @@
   "semi": true,
   "singleQuote": false,
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "./src/i18n/translation/*.json",
+      "options": {
+        "parser": "json",
+        "plugins": ["prettier-plugin-sort-json"]
+      }
+    }
+  ]
 }
