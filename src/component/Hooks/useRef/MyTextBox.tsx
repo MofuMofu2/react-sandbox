@@ -1,19 +1,27 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useImperativeHandle, useRef } from "react";
 
-interface MyTextBoxProps {
-  label: string;
-}
+const MyTextBox = forwardRef((props, ref) => {
+  const input = useRef<HTMLInputElement>(null);
 
-const MyTextBox = forwardRef<HTMLInputElement, MyTextBoxProps>(
-  function MyTextBox(props, ref) {
-    return (
-      <div>
-        <label>{props.label}</label>
-        <input type="text" ref={ref} />
-      </div>
-    );
-  }
-);
+  useImperativeHandle(
+    ref,
+    () => {
+      return {
+        focus() {
+          input.current?.focus();
+        },
+      };
+    },
+    [input]
+  );
+
+  return (
+    <>
+      <label>{props.label}</label>
+      <input type="text" size={15} ref={input} />
+    </>
+  );
+});
 
 MyTextBox.displayName = "MyTextBox";
 
