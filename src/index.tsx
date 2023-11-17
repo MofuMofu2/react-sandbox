@@ -2,12 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Root from "./routes/Root";
-import { worker } from "./mocks/browser";
-
-if (process.env.NODE_ENV === "development") {
-  void worker.start();
-}
+import HookCallbackRef from "./component/Hooks/useRef/HookCallbackRef";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,8 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <>
-    <div id="dialog"></div>
-    <Root />
+    <HookCallbackRef />
   </>
 );
 
