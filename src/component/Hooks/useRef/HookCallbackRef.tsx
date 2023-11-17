@@ -8,6 +8,10 @@ export default function HookCallbackRef() {
     setShow(!show);
   };
 
+  const callbackRef = (elem: HTMLInputElement) => {
+    elem?.focus();
+  };
+
   useEffect(() => {
     if (address.current != null) {
       address.current.focus();
@@ -28,7 +32,7 @@ export default function HookCallbackRef() {
       {show && (
         <div>
           <label htmlFor="address">住所</label>
-          <input id="address" type="text" />
+          <input id="address" type="text" ref={callbackRef} />
         </div>
       )}
     </>
