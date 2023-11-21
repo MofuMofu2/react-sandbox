@@ -24,7 +24,6 @@ type Action = {
 export default function HookReducerInit({ init }: HookReducerInitProps) {
   const [state, dispatch] = useReducer(
     (state: State, action: Action) => {
-      initCounter(init);
       switch (action.type) {
         case "update":
           return { count: state.count + action.step };
@@ -32,7 +31,8 @@ export default function HookReducerInit({ init }: HookReducerInitProps) {
           return { count: action.init };
       }
     },
-    { count: init }
+    init,
+    initCounter
   );
 
   const handleUp = () => {
