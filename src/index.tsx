@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import HookReducerInit from "./component/Hooks/useReducer/HookReducerInit";
+import HookContext from "./component/Hooks/Context/HookContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <>
-    <HookReducerInit init={0} />
+    <HookContext />
   </>
 );
 
