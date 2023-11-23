@@ -21,7 +21,7 @@ it("色の入力フォームの値を変更するとフォームにも反映さ�
 
   // colorフォームの値を更新する
   const form = content.getByLabelText("color");
-  await fireEvent.input(form, { target: { value: "#FF0000" } });
+  fireEvent.input(form, { target: { value: "#FF0000" } });
 
   expect(form).toHaveValue("#ff0000");
 });
