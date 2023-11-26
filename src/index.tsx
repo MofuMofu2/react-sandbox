@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import HookContext from "./component/Hooks/Context/HookContext";
+import QuerySample from "./component/Query/QuerySample";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -21,7 +21,7 @@ void enableMocking().then(() => {
 
   root.render(
     <>
-      <HookContext />
+      <QuerySample />
     </>
   );
 });
