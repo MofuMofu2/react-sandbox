@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http } from "msw";
 
 export const handlers = [
   // ログイン用のモック
