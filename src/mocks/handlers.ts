@@ -14,7 +14,7 @@ export const handlers = [
       ctx.status(200),
       ctx.json({
         username: "miff",
-        locale: "en"
+        locale: "en",
       })
     );
   }),
