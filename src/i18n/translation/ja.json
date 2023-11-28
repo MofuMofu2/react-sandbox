@@ -1,4 +1,5 @@
 {
+  "eggAndApple": "卵は{{egg}}個、りんごは{{apple}}個",
   "hello": "こんにちは、react-i18next!",
   "nodata": "データがありません",
   "welcome": "Reactとreact-i18nextの世界へようこそ！"
