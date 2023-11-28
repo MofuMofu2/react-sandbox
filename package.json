@@ -82,5 +82,10 @@
   },
   "msw": {
     "workerDirectory": "public"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest.polyfills.js"
+    ]
   }
 }
