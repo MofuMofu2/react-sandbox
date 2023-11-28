@@ -1,22 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import QuerySample from "./QuerySample";
-import { http, HttpResponse } from "msw";
-import { setupServer } from "msw/node";
+import { server } from "../../mocks/server";
 
 describe("APIレスポンスパラメータの取得状態に応じてレンダリング結果が変わること", () => {
-  const server = setupServer(
-    http.get("/user", () => {
-      return HttpResponse.json(
-        {
-          username: "miff",
-          locale: "en",
-        },
-        { status: 200 }
-      );
-    })
-  );
-
   // mswのモックサーバーを起動
   beforeAll(() => {
     server.listen();
