@@ -1,4 +1,5 @@
 {
+  "eggAndApple": "I have {{egg}} egg and {{apple}} apple.",
   "hello": "Hello react-i18next!",
   "nodata": "Missing user information.",
   "welcome": "Welcome to React and react-i18next!"

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import i18n from "../../i18n/i18n";
 
 type User = {
   username: string;
@@ -29,6 +30,7 @@ export default function QuerySample() {
       <h1>QuerySample</h1>
       <p>{users != null ? users.username : ""}</p>
       <p>{users != null ? users.locale : ""}</p>
+      <p>{i18n.t("eggAndApple", { egg: 3, apple: 5 })}</p>
     </div>
   );
 }
