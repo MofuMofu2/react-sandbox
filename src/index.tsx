@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import QuerySample from "./component/Query/QuerySample";
+import RecoilCounter from "./component/Recoil/RecoilCounter";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -21,7 +21,7 @@ void enableMocking().then(() => {
 
   root.render(
     <>
-      <QuerySample />
+      <RecoilCounter />
     </>
   );
 });
