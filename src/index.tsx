@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import RecoilCounter from "./component/Recoil/RecoilCounter";
+import { RecoilRoot } from "recoil";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -21,7 +22,9 @@ void enableMocking().then(() => {
 
   root.render(
     <>
-      <RecoilCounter />
+      <RecoilRoot>
+        <RecoilCounter />
+      </RecoilRoot>
     </>
   );
 });
