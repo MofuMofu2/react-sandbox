@@ -5,13 +5,13 @@ export const counterAtom = atom({
   default: 0,
 });
 
-type Todo = {
+export type TodoList = {
   id: number;
   title: string;
   isDone: boolean;
 };
 
-export const todoAtom = atom<Todo[]>({
+export const todoAtom = atom<TodoList[]>({
   key: "todosAtom",
   default: [
     { id: 1, title: "Learn React", isDone: false },
