@@ -6,7 +6,9 @@ import { todoLastIdSelector } from "./selector";
 
 describe("グローバルステートの初期値に関するテスト", () => {
   it("ステートの初期値が意図通りにセットされていること", () => {
-    const { result } = renderHook(() => useRecoilValue(todoAtom));
+    const { result } = renderHook(() => useRecoilValue(todoAtom), {
+      wrapper: RecoilRoot,
+    });
     expect(result.current).toEqual([
       { id: 1, title: "Learn React", isDone: false },
       { id: 2, title: "Learn Recoil", isDone: false },
