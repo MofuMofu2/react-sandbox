@@ -46,6 +46,7 @@ export default function Todo() {
     <div>
       <label htmlFor="title">やること：</label>
       <input
+        id="title"
         type="text"
         name="title"
         value={title}
