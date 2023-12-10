@@ -1,6 +1,5 @@
 import React from "react";
 import StarRating from "../StarRating";
-import { useColors } from "../ColorProvider";
 
 export interface Colors {
   id: string;
@@ -10,17 +9,10 @@ export interface Colors {
 }
 
 export default function Color({ id, title, color, rating }: Colors) {
-  const { removeColor } = useColors();
   return (
     <section>
       <h1>{title}</h1>
-      <button
-        onClick={() => {
-          removeColor(id);
-        }}
-      >
-        remove
-      </button>
+      <span>色を選ぶ</span>
       <div style={{ height: 50, backgroundColor: color }}></div>
       <StarRating selectedStars={rating} />
     </section>
