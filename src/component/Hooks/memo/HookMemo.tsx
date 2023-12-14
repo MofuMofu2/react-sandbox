@@ -25,10 +25,9 @@ export default function HookMemo() {
     <div>
       <h1>Hook Memo</h1>
       <button onClick={decrement}>-</button>
-      <span>{count}</span>
-      <button onClick={increment}>+</button>
       <span>{count2}</span>
-      <div>{heavyFunction()}</div>
+      <button onClick={increment}>+</button>
+      <span>{count}</span>
     </div>
   );
 }
