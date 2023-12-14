@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 const sleep = (delay: number) => {
   const start = Date.now();
@@ -16,10 +16,10 @@ export default function HookMemo() {
     setCount2((c) => c - 1);
   };
 
-  const heavyFunction = () => {
+  const heavyFunction = useMemo(() => {
     sleep(3000);
-    return count;
-  };
+    return count + 100;
+  }, [count]);
 
   return (
     <div>
@@ -28,6 +28,7 @@ export default function HookMemo() {
       <span>{count2}</span>
       <button onClick={increment}>+</button>
       <span>{count}</span>
+      {heavyFunction}
     </div>
   );
 }

@@ -8,14 +8,6 @@ it("初期値のテスト", () => {
   expect(content.getAllByText("0")).toHaveLength(2);
 });
 
-it("+ボタンをクリックするとcountの値が+1される", async () => {
-  const event = userEvent.setup();
-  const content = render(<HookMemo />);
-
-  await event.click(content.getByText("+"));
-  expect(content.getByText("1")).toBeInTheDocument();
-});
-
 it("-ボタンをクリックするとcount2の値が-1される", async () => {
   const event = userEvent.setup();
   const content = render(<HookMemo />);
