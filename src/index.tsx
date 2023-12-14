@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { RecoilRoot } from "recoil";
-import Todo from "./component/Todo/Todo";
+import HookMemo from "./component/Hooks/memo/HookMemo";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -20,13 +19,7 @@ void enableMocking().then(() => {
     document.getElementById("root") as HTMLElement
   );
 
-  root.render(
-    <>
-      <RecoilRoot>
-        <Todo />
-      </RecoilRoot>
-    </>
-  );
+  root.render(<HookMemo />);
 });
 
 // If you want to start measuring performance in your app, pass a function
