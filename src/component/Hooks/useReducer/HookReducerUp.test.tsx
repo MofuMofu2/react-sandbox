@@ -1,7 +1,7 @@
-import React from "react";
-import HookReducerUp from "./HookReducerUp";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import React from "react";
+import HookReducerUp from "./HookReducerUp";
 
 it("初期状態はpropsの値でpタグのテキストがレンダリングされる", () => {
   const screen = render(<HookReducerUp init={0} />);

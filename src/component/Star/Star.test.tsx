@@ -1,5 +1,5 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import React from "react";
 import Star from "./";
 
 it("選択状態のときは赤色でレンダリングされる", () => {

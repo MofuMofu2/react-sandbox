@@ -1,7 +1,7 @@
-import React from "react";
 import { render } from "@testing-library/react";
-import HookMemo from "./HookMemo";
 import userEvent from "@testing-library/user-event";
+import React from "react";
+import HookMemo from "./HookMemo";
 
 it("初期値のテスト", () => {
   const content = render(<HookMemo />);

@@ -1,7 +1,7 @@
-import React from "react";
 import { act, render } from "@testing-library/react";
-import HookRefNg from "./HookRefNg";
 import userEvent from "@testing-library/user-event";
+import React from "react";
+import HookRefNg from "./HookRefNg";
 
 it("ボタンをクリックすると1秒ずつ待ち、開始ボタンを押すと秒数ごとにカウントする", async () => {
   const event = userEvent.setup();

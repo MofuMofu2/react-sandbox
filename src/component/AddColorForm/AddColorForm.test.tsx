@@ -1,6 +1,6 @@
-import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import React from "react";
 import AddColorForm from ".";
 
 it("タイトルフォームに値を入力するとフォームテキストにも反映される", async () => {

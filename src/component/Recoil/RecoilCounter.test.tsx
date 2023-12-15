@@ -1,8 +1,8 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import React from "react";
 import { RecoilRoot } from "recoil";
 import RecoilCounter from "./RecoilCounter";
-import userEvent from "@testing-library/user-event";
 
 it("初期状態は0回しかクリックされていない", () => {
   const content = render(

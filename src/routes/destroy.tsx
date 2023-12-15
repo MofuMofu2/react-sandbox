@@ -1,6 +1,6 @@
+import { error } from "console";
 import { redirect } from "react-router-dom";
 import { deleteContact } from "../contacts";
-import { error } from "console";
 
 export async function action({ params }: any) {
   throw new Error("Not implemented");

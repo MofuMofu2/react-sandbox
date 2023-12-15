@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import { faGrinStars } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 
 export default function EventMouse() {
   const [current, setCurrent] = useState<"blue" | "red">("blue");
