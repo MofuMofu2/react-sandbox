@@ -13,11 +13,6 @@
     "prepare": "husky install",
     "test": "react-scripts test --watchAll=false"
   },
-  "lint-staged": {
-    "*.ts": "prettier --write",
-    "*.tsx": "prettier --write",
-    "*.json": "prettier --write"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
