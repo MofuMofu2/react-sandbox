@@ -1,5 +1,7 @@
-import { render } from "@testing-library/react";
 import React from "react";
+
+import { render } from "@testing-library/react";
+
 import HookContext from "./HookContext";
 
 it("MyAppContextの値が子コンポーネントに渡されている", () => {

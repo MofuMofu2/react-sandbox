@@ -1,4 +1,5 @@
 import React, { Profiler } from "react";
+
 import HeavyUI from "./HeavyUI";
 
 export default function ProfilerBasic() {

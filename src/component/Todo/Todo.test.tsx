@@ -1,7 +1,9 @@
-import { render } from "@testing-library/react";
 import React from "react";
-import { RecoilRoot } from "recoil";
+
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
+
+import { RecoilRoot } from "recoil";
 
 import Todo from "./Todo";
 

@@ -26,14 +26,27 @@
         "groups": [
           "builtin",
           "external",
-          "parent",
-          "internal",
-          "sibling",
           "index",
+          "type",
           "object",
-          "type"
+          "internal",
+          "sibling"
         ],
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@testing-library/**",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always"
       }
     ]
   },
