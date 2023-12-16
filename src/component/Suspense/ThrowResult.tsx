@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { wrapPromise } from "./wrapPromise";
 
 export default function ThrowResult() {

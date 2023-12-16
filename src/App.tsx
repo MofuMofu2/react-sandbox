@@ -1,10 +1,12 @@
 import * as React from "react";
+
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+
 import Root from "./routes/root";
 
 const router = createBrowserRouter(

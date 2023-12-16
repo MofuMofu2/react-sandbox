@@ -1,7 +1,10 @@
 import React from "react";
-import HookTimer from "./HookTimer";
+
 import { render } from "@testing-library/react";
+
 import { act } from "react-dom/test-utils";
+
+import HookTimer from "./HookTimer";
 
 describe("HookTimerに関するテスト", () => {
   beforeEach(() => {

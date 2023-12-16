@@ -1,4 +1,5 @@
 import React from "react";
+
 import Color, { type Colors } from "../Color";
 import { useColors } from "../ColorProvider";
 

@@ -1,8 +1,12 @@
 import React, { type ComponentType, useTransition } from "react";
-import ChangeLanguage from "./ChangeLanguage";
+
 import { render } from "@testing-library/react";
-import i18n from "../../i18n/i18n";
+
 import { initReactI18next } from "react-i18next";
+
+import ChangeLanguage from "./ChangeLanguage";
+
+import i18n from "../../i18n/i18n";
 
 beforeEach(() => {
   i18n.use(initReactI18next).init({

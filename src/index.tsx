@@ -1,8 +1,10 @@
 import React from "react";
+
 import ReactDOM from "react-dom/client";
+
 import "./index.css";
-import reportWebVitals from "./reportWebVitals";
 import HookMemo from "./component/Hooks/memo/HookMemo";
+import reportWebVitals from "./reportWebVitals";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {

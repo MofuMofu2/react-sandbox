@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+
 import "./Todo.modules.css";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { todoLastIdSelector } from "../../store/selector";
+
 import { type TodoList, todoAtom } from "../../store/atom";
+import { todoLastIdSelector } from "../../store/selector";
 
 export default function Todo() {
   const [title, setTitle] = useState("");

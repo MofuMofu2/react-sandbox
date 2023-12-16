@@ -1,7 +1,8 @@
 import React from "react";
-import { getAllByTitle, render } from "@testing-library/react";
+
+import { render } from "@testing-library/react";
+
 import StarRating from "./";
-import userEvent from "@testing-library/user-event";
 
 it("初期状態", () => {
   const screen = render(<StarRating />);

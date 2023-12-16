@@ -1,6 +1,8 @@
 import React, { useState, createContext, useContext } from "react";
-import colorData from "../../assets/color-data.json";
+
 import { v4 } from "uuid";
+
+import colorData from "../../assets/color-data.json";
 import { type Colors } from "../Color";
 
 const ColorContext = createContext<any>(undefined);

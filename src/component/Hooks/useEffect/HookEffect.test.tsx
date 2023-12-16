@@ -1,8 +1,11 @@
 import React from "react";
-import HookEffect from "./HookEffect";
+
 import { render } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
+
+import { act } from "react-dom/test-utils";
+
+import HookEffect from "./HookEffect";
 
 it("ボタンをクリックするとuseEffectの処理が実行される", async () => {
   const event = userEvent.setup();
