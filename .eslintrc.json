@@ -26,10 +26,12 @@
         "groups": [
           "builtin",
           "external",
-          "internal",
           "parent",
+          "internal",
           "sibling",
-          "index"
+          "index",
+          "object",
+          "type"
         ],
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
