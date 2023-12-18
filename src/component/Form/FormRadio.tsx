@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import useForm from "./UseForm";
 
 export default function FormRadio() {
-  const [form, setForm] = useState({
-    os: "windows",
-  });
-
-  const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
+  // useFormの引数に初期値を渡す
+  const { values: form, handleChange: handleForm } = useForm({ os: "windows" });
 
   return (
     <>
