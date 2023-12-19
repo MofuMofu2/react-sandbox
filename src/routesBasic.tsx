@@ -9,6 +9,10 @@ const routesBasic = createBrowserRouter([
     path: "/about",
     element: <About />,
   },
+  {
+    path: "/article",
+    element: <div>Article</div>,
+  },
 ]);
 
 export default routesBasic;
