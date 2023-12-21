@@ -11,7 +11,7 @@ import TopPage from "./routes/TopPage";
 const routesBasic = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RouterApp />}>
-      <Route path="/" element={<TopPage />} />
+      <Route index element={<TopPage />} />
       <Route path="/about" element={<About />} />
     </Route>
   )
