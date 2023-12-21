@@ -1,18 +1,20 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import About from "./routes/About";
+import RouterApp from "./routes/RouterApp";
 import TopPage from "./routes/TopPage";
 
-const routesBasic = createBrowserRouter([
-  { path: "/", element: <TopPage /> },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/article",
-    element: <div>Article</div>,
-  },
-]);
+const routesBasic = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RouterApp />}>
+      <Route path="/" element={<TopPage />} />
+      <Route path="/about" element={<About />} />
+    </Route>
+  )
+);
 
 export default routesBasic;
