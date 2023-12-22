@@ -10,6 +10,7 @@ export default function RouterApp() {
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? style.active : "")}
+            reloadDocument
           >
             TopPage
           </NavLink>
