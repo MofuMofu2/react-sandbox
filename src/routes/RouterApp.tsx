@@ -1,15 +1,26 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+import style from "./RouterApp.module.css";
 
 export default function RouterApp() {
   return (
     <>
       <ul>
         <li>
-          <Link to="/">TopPage</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
+            TopPage
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
+            About
+          </NavLink>
         </li>
       </ul>
       <Outlet />
