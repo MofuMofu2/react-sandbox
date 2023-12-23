@@ -23,6 +23,12 @@ export default function RouterApp() {
             About
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/article/1">1番のページ</NavLink>
+        </li>
+        <li>
+          <NavLink to="/article/2">2番のページ</NavLink>
+        </li>
       </ul>
       <Outlet />
     </>
