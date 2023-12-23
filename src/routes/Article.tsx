@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function Article() {
-  return <div>Article</div>;
+type ArticleProps = {
+  id: string;
+};
+
+export default function Article({ ...props }: ArticleProps) {
+  return <div>{props.id} のページです</div>;
 }
