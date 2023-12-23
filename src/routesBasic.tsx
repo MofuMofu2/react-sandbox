@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import About from "./routes/About";
+import Article from "./routes/Article";
 import RouterApp from "./routes/RouterApp";
 import TopPage from "./routes/TopPage";
 
@@ -13,6 +14,7 @@ const routesBasic = createBrowserRouter(
     <Route path="/" element={<RouterApp />}>
       <Route index element={<TopPage />} />
       <Route path="/about" element={<About />} />
+      <Route path="/article/:id" element={<Article />} />
     </Route>
   )
 );

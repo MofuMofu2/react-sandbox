@@ -1,9 +1,7 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
-type ArticleProps = {
-  id: string;
-};
-
-export default function Article({ ...props }: ArticleProps) {
-  return <div>{props.id} のページです</div>;
+export default function Article() {
+  const params = useParams();
+  return <div>{params.id} のページです</div>;
 }
