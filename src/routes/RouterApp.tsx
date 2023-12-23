@@ -24,10 +24,20 @@ export default function RouterApp() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/article/1">1番のページ</NavLink>
+          <NavLink
+            to="/article/1"
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
+            1番のページ
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/article/2">2番のページ</NavLink>
+          <NavLink
+            to="/article/2"
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
+            2番のページ
+          </NavLink>
         </li>
       </ul>
       <Outlet />
