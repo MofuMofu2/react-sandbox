@@ -25,6 +25,14 @@ export default function RouterApp() {
         </li>
         <li>
           <NavLink
+            to="/article"
+            className={({ isActive }) => (isActive ? style.active : "")}
+          >
+            さいしょのページ
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="/article/1"
             className={({ isActive }) => (isActive ? style.active : "")}
           >

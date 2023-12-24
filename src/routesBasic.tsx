@@ -14,7 +14,7 @@ const routesBasic = createBrowserRouter(
     <Route path="/" element={<RouterApp />}>
       <Route index element={<TopPage />} />
       <Route path="/about" element={<About />} />
-      <Route path="/article/:id" element={<Article />} />
+      <Route path="/article/:id?" element={<Article />} />
     </Route>
   )
 );
