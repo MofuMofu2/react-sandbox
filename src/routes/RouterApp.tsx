@@ -47,6 +47,9 @@ export default function RouterApp() {
             2番のページ
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/search/react/router/remix">検索結果</NavLink>
+        </li>
       </ul>
       <Outlet />
     </>

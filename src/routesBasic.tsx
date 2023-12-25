@@ -7,6 +7,7 @@ import {
 import About from "./routes/About";
 import Article from "./routes/Article";
 import RouterApp from "./routes/RouterApp";
+import SearchPage from "./routes/SearchPage";
 import TopPage from "./routes/TopPage";
 
 const routesBasic = createBrowserRouter(
@@ -15,6 +16,7 @@ const routesBasic = createBrowserRouter(
       <Route index element={<TopPage />} />
       <Route path="/about" element={<About />} />
       <Route path="/article/:id?" element={<Article />} />
+      <Route path="/search/*" element={<SearchPage />} />
     </Route>
   )
 );
