@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import About from "./routes/About";
 import Article from "./routes/Article";
+import NotFoundPage from "./routes/NotFoundPage";
 import RouterApp from "./routes/RouterApp";
 import SearchPage from "./routes/SearchPage";
 import TopPage from "./routes/TopPage";
@@ -17,6 +18,7 @@ const routesBasic = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/article/:id?" element={<Article />} />
       <Route path="/search/*" element={<SearchPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
 );

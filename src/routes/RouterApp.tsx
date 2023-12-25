@@ -50,6 +50,9 @@ export default function RouterApp() {
         <li>
           <NavLink to="/search/react/router/remix">検索結果</NavLink>
         </li>
+        <li>
+          <NavLink to="/noting/foo/bar">存在しないページ</NavLink>
+        </li>
       </ul>
       <Outlet />
     </>
