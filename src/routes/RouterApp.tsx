@@ -53,6 +53,11 @@ export default function RouterApp() {
         <li>
           <NavLink to="/noting/foo/bar">存在しないページ</NavLink>
         </li>
+        <li>
+          <NavLink to="/book-query?isbn=978-4-8156-0182-9">
+            クエリでアクセスするページ
+          </NavLink>
+        </li>
       </ul>
       <Outlet />
     </>
