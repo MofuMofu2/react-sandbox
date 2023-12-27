@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import style from "./RouterApp.module.css";
 
 export default function RouterApp() {
+  const [count, setCount] = useState(0);
   return (
     <>
+      <p>アクセス数：{count}</p>
       <ul>
         <li>
           <NavLink
@@ -59,7 +61,7 @@ export default function RouterApp() {
           </NavLink>
         </li>
       </ul>
-      <Outlet />
+      <Outlet context={[count, setCount]} />
     </>
   );
 }
