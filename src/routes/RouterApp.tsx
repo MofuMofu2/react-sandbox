@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import style from "./RouterApp.module.css";
 
 export default function RouterApp() {
@@ -44,6 +44,7 @@ export default function RouterApp() {
         <li>
           <NavLink
             to="/article/2"
+            preventScrollReset
             className={({ isActive }) => (isActive ? style.active : "")}
           >
             2番のページ
@@ -61,6 +62,7 @@ export default function RouterApp() {
           </NavLink>
         </li>
       </ul>
+      <ScrollRestoration />
       <Outlet context={[count, setCount]} />
     </>
   );
