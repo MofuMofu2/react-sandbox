@@ -2,9 +2,9 @@ import React from "react";
 
 import ReactDOM from "react-dom/client";
 
-import "./index.css";
-import HookMemo from "./component/Hooks/memo/HookMemo";
+import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import routesBasic from "./routesBasic";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -21,7 +21,7 @@ void enableMocking().then(() => {
     document.getElementById("root") as HTMLElement
   );
 
-  root.render(<HookMemo />);
+  root.render(<RouterProvider router={routesBasic} />);
 });
 
 // If you want to start measuring performance in your app, pass a function
