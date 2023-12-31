@@ -4,8 +4,8 @@
   "license": "MIT",
   "author": "MofuMofu2",
   "scripts": {
-    "build": "react-scripts build",
-    "dev": "react-scripts start",
+    "build": "tsc --noEmit && vite build",
+    "dev": "vite",
     "eject": "react-scripts eject",
     "format": "prettier -w src/*",
     "sort-json": "node scripts/sort-json.js",
