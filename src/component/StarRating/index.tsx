@@ -14,7 +14,7 @@ export default function StarRating({
   return (
     <>
       {[...Array(count)].map((n, i) => (
-        <FontAwesomeIcon key={i} icon={faStar} color={color} />
+        <FontAwesomeIcon key={i} icon={faStar} color={color} title="star" />
       ))}
       <p>{`星の数は${count}個です`}</p>
     </>

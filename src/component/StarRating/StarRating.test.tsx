@@ -4,14 +4,18 @@ import { render } from "@testing-library/react";
 
 import StarRating from "./";
 
-it("初期状態", () => {
-  const screen = render(<StarRating />);
-  const stars = screen.getAllByTitle("red");
-  // 赤い星は3つ
-  expect(stars).toHaveLength(3);
-  // 灰色の星は3つ
-  const greyStars = screen.getAllByTitle("grey");
-  expect(greyStars).toHaveLength(2);
-  // テキスト
-  expect(screen.getByText("3 of 5 Stars")).toBeTruthy();
+it("countの数だけ星が描画されている", () => {
+  // デフォルト値は3なので変更した値を渡す
+  const content = render(<StarRating color="red" count={5} />);
+  // 星の要素を取得
+  const stars = content.getAllByTitle("star");
+  // 要素数は5個
+  expect(stars).toHaveLength(5);
+});
+
+it("星の数を示すテキストがcountの値を使って描画されている", () => {
+  // デフォルト値は3なので変更した値を渡す
+  const content = render(<StarRating color="red" count={4} />);
+  // 意図通りのテキストになっているか確認
+  expect(content.getByText("星の数は4個です")).toBeTruthy();
 });
