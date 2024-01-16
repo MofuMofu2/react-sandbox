@@ -1,16 +1,22 @@
 import React from "react";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Star from "../Star";
+type StarRatingProps = {
+  color: "red" | "blue" | "yellow";
+  count: number;
+};
+
 export default function StarRating({
-  totalStars = 5,
-  selectedStars = 3,
-}): JSX.Element {
+  color = "red",
+  count = 3,
+}: StarRatingProps): JSX.Element {
   return (
     <>
-      {[...Array(totalStars)].map((n, i) => (
-        <Star key={i} selected={selectedStars > i} onSelect={() => i + 1} />
+      {[...Array(count)].map((n, i) => (
+        <FontAwesomeIcon key={i} icon={faStar} color={color} />
       ))}
-      <p>{`${selectedStars} of ${totalStars} Stars`}</p>
+      <p>{`星の数は${count}個です`}</p>
     </>
   );
 }

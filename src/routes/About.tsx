@@ -1,6 +1,7 @@
 import React from "react";
 import "./Root.css";
 import { NameContext } from "./RouterApp";
+import StarRating from "../component/StarRating";
 
 export default function About() {
   const nameContext = React.useContext(NameContext);
@@ -20,6 +21,7 @@ export default function About() {
       <p>My name is {name}</p>
       <label htmlFor="name">Type Your Name</label>
       <input id="name" type="text" value={name} onInput={handleChange} />
+      <StarRating color="red" count={3} />
     </>
   );
 }
