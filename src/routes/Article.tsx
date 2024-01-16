@@ -15,7 +15,7 @@ export default function Article() {
     <>
       <h1>Article</h1>
       <p>id: {id}</p>
-      <p>{name}のページです</p>
+      <p>{name.length === 0 ? "最初" : name}のページです</p>
     </>
   );
 }
