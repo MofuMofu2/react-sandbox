@@ -1,7 +1,5 @@
 import React from "react";
-
 import { render } from "@testing-library/react";
-
 import StarRating from "./";
 
 it("countの数だけ星が描画されている", () => {
