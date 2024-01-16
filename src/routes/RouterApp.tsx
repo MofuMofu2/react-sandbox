@@ -2,13 +2,22 @@ import React, { createContext, useState } from "react";
 import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import style from "./RouterApp.module.css";
 
+type NameContextType = {
+  name: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+};
+
 // コンテキストを初期化する
-export const NameContext = createContext("");
+export const NameContext = createContext<NameContextType | undefined>(
+  undefined
+);
 
 export default function RouterApp() {
   const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
+
   return (
-    <NameContext.Provider value="">
+    <NameContext.Provider value={{ name, setName }}>
       <>
         <p>アクセス数：{count}</p>
         <ul>
