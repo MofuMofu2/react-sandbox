@@ -1,5 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Root.css";
 
 export default function About() {
-  return <div>About</div>;
+  const [name, setName] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+
+  return (
+    <>
+      <h1>About</h1>
+      <p>My name is {name}</p>
+      <label htmlFor="name">Type Your Name</label>
+      <input id="name" type="text" onInput={handleChange} />
+    </>
+  );
 }
