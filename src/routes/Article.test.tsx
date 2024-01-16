@@ -7,13 +7,13 @@ import { NameContext } from "./RouterApp";
 describe("初期状態のテスト", () => {
   // Contextのモックを作成
   const mockSetName = jest.fn();
-  const mockName = "";
+  const mockName = "name";
   it("ステートが存在する場合はステート + 固定テキストがレンダリングされていること", () => {
     const content = render(
       <NameContext.Provider value={{ name: mockName, setName: mockSetName }}>
         <Article />
       </NameContext.Provider>
     );
-    expect(content.getByText("最初のページです")).toBeInTheDocument();
+    expect(content.getByText("nameのページです")).toBeInTheDocument();
   });
 });

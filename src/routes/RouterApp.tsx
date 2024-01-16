@@ -43,7 +43,7 @@ export default function RouterApp() {
               to="/article"
               className={({ isActive }) => (isActive ? style.active : "")}
             >
-              さいしょのページ
+              ContextでNameを表示するページ
             </NavLink>
           </li>
           <li>
