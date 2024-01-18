@@ -24,10 +24,9 @@ export default function ChangeIcon() {
         <option value="image">画像</option>
         <option value="tent">テント</option>
       </select>
-      <div>
-        <span>選択しているアイコンは{icon.text}です</span>
-        <FontAwesomeIcon icon={icon.value} />
-      </div>
+      <h2>選択中のアイコン</h2>
+      <span>選択しているアイコンは{icon.text}です</span>
+      <FontAwesomeIcon icon={icon.value} />
     </section>
   );
 }

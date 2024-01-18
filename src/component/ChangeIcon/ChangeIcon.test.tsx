@@ -3,9 +3,8 @@ import { render } from "@testing-library/react";
 
 import ChangeIcon from ".";
 
-it("コンポーネントが表示できる", () => {
-  // テスト対象のコンポーネントをレンダリングする
-  const { container } = render(<ChangeIcon />);
-  // テスト対象のコンポーネントが存在することを確認する
-  expect(container).toBeInTheDocument();
+it("h2タグが存在する", () => {
+  const content = render(<ChangeIcon />);
+  // h2タグが2つ存在することを確認
+  expect(content.getByRole("heading", { level: 2 })).toBeInTheDocument();
 });
