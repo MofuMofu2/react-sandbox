@@ -26,7 +26,7 @@ export default function ChangeIcon() {
       </select>
       <h2>選択中のアイコン</h2>
       <span>選択しているアイコンは{icon.text}です</span>
-      <FontAwesomeIcon icon={icon.value} />
+      <FontAwesomeIcon icon={icon.value} data-testid="icon" />
     </section>
   );
 }
