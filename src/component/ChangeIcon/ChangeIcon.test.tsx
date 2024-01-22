@@ -19,8 +19,16 @@ it("ドロップダウンの値を変更するとアイコンが変わる", asyn
   const event = userEvent.setup();
   const content = render(<ChangeIcon />);
 
+  // data-icon属性がimageになっていることを確認
+  expect(content.getByTestId("icon")).toHaveAttribute("data-icon", "music");
+
   // ドロップダウンの値を変更
   await event.selectOptions(content.getByRole("combobox"), "image");
-  // アイコン要素が存在することを確認
-  expect(content.getByTestId("icon")).toBeInTheDocument();
+  // アイコンのドキュメントが更新されていることを確認
+  expect(
+    content.getByText("選択しているアイコンは画像です")
+  ).toBeInTheDocument();
+
+  // data-icon属性がimageになっていることを確認
+  expect(content.getByTestId("icon")).toHaveAttribute("data-icon", "image");
 });
