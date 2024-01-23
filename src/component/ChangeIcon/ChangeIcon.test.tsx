@@ -7,6 +7,9 @@ it("h2タグが2つ存在する", () => {
   const content = render(<ChangeIcon />);
   // h2タグが2つ存在することを確認
   expect(content.getAllByRole("heading", { level: 2 })).toHaveLength(2);
+
+  // h2タグが2つ存在することを確認
+  expect(content.getAllByRole("heading", { level: 2 }).length).toBe(2);
 });
 
 it("アイコン要素が存在することを確認する", () => {
