@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import AlertPage from "./AlertPage";
 
 describe("初期状態のテスト", () => {
@@ -18,6 +19,15 @@ describe("初期状態のテスト", () => {
   // 実際は非表示だが取れてしまう
   it("モーダルのレンダリング", () => {
     const content = render(<AlertPage />);
+    expect(content.queryByText("アラートテキストを表示")).toBeTruthy();
+  });
+});
+
+describe("モーダルダイアログを表示するとき", () => {
+  it("モーダル表示ボタンをクリックするとダイアログウィンドウが表示される", async () => {
+    const event = userEvent.setup();
+    const content = render(<AlertPage />);
+    await event.click(content.getByRole("button", { name: "モーダル表示" }));
     expect(content.queryByText("アラートテキストを表示")).toBeTruthy();
   });
 });
