@@ -1,8 +1,15 @@
 import React from "react";
 
-export default function AlertModal() {
+type AlertModalProps = {
+  /**
+   * dialogを切り替える
+   */
+  open?: boolean;
+};
+
+export default function AlertModal({ open = true }: AlertModalProps) {
   return (
-    <dialog open>
+    <dialog open={open}>
       <p>アラートテキストを表示</p>
       <button type="button">OK</button>
     </dialog>

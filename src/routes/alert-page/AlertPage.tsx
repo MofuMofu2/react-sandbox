@@ -5,7 +5,7 @@ export default function AlertPage() {
   return (
     <>
       <h3>ボタンクリックでモーダルダイアログ表示を切り替える</h3>
-      <AlertModal />
+      <AlertModal open={false} />
     </>
   );
 }
