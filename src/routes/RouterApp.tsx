@@ -74,6 +74,9 @@ export default function RouterApp() {
               クエリでアクセスするページ
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/alert-page">ボタンコンポーネントのテスト</NavLink>
+          </li>
         </ul>
         <ScrollRestoration />
         <Outlet context={[count, setCount]} />
