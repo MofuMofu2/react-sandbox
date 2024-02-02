@@ -5,9 +5,8 @@ module.exports = {
     const cwd = process.cwd();
     const files = filenames.map((file) => path.relative(cwd, file));
     return [
-      `npx eslint --fix --rule 'import/order: 2'`,
       `npx prettier --write ${files.join(' ')}`,
-      `npx eslint ${files.join(' ')}`,
+      `npx eslint --fix ${files.join(' ')}`,
     ];
   },
   '*.json': (filenames) => {
