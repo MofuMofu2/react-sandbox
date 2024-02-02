@@ -9,4 +9,9 @@ describe("初期状態のテスト", () => {
       content.getByText("ボタンクリックでモーダルダイアログ表示を切り替える")
     ).toBeTruthy();
   });
+
+  it("モーダル表示用ボタンがレンダリングされている", () => {
+    const content = render(<AlertPage />);
+    expect(content.getByRole("button", { name: "モーダル表示" })).toBeTruthy();
+  });
 });
