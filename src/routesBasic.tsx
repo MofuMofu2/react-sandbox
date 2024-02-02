@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import About from "./routes/About";
+import AlertPage from "./routes/alert-page/AlertPage";
 import Article from "./routes/Article";
 import BookQueryPage from "./routes/BookQueryPage";
 import NotFoundPage from "./routes/NotFoundPage";
@@ -20,6 +21,7 @@ const routesBasic = createBrowserRouter(
       <Route path="/article/:id?" element={<Article />} />
       <Route path="/search/*" element={<SearchPage />} />
       <Route path="/book-query" element={<BookQueryPage />} />
+      <Route path="/alert-page" element={<AlertPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
