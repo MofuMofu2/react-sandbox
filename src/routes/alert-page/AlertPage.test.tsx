@@ -14,4 +14,10 @@ describe("初期状態のテスト", () => {
     const content = render(<AlertPage />);
     expect(content.getByRole("button", { name: "モーダル表示" })).toBeTruthy();
   });
+
+  // 実際は非表示だが取れてしまう
+  it("モーダルのレンダリング", () => {
+    const content = render(<AlertPage />);
+    expect(content.queryByText("アラートテキストを表示")).toBeTruthy();
+  });
 });
