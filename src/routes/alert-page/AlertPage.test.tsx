@@ -22,11 +22,23 @@ describe("初期状態のテスト", () => {
   });
 });
 
-describe("モーダルダイアログを表示するとき", () => {
+describe("モーダルダイアログの表示・非表示を切り替えられる", () => {
   it("モーダル表示ボタンをクリックするとダイアログウィンドウが表示される", async () => {
     const event = userEvent.setup();
     const content = render(<AlertPage />);
     await event.click(content.getByRole("button", { name: "モーダル表示" }));
     expect(content.queryByText("アラートテキストを表示")).toBeTruthy();
+  });
+
+  // ここは分けておいた方がいい。ごっちゃになると見落とす
+  it("モーダルを一度表示した後OKボタンをクリックすると非表示になる", async () => {
+    const event = userEvent.setup();
+    const content = render(<AlertPage />);
+    // モーダルウィンドウを表示
+    await event.click(content.getByRole("button", { name: "モーダル表示" }));
+    // OKボタンをクリック
+    await event.click(content.getByRole("button", { name: "OK" }));
+    // モーダルウィンドウが非表示になっているか
+    expect(content.queryByText("アラートテキストを表示")).not.toBeTruthy();
   });
 });
