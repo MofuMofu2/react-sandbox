@@ -4,7 +4,7 @@ export default function StayExtensionOptionsRadio() {
   return (
     <div>
       <label>
-        <input type="radio" name="extension" value="previous" />
+        <input type="radio" name="extension" value="previous" checked />
         前泊のみ
       </label>
       <label>
