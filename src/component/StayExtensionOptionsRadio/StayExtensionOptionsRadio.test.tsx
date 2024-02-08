@@ -17,3 +17,11 @@ describe("初期状態のテスト", () => {
     );
   });
 });
+
+describe("クリックしたとき選択状態が切り替わる", () => {
+  it("最初は「宿泊なし」が選択されている", () => {
+    const content = render(<StayExtensionOptionsRadio />);
+    const radio = content.getByRole("radio", { name: "宿泊なし" });
+    expect(radio).toBeChecked();
+  });
+});
