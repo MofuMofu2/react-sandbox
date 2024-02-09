@@ -28,6 +28,10 @@ describe("クリックしたとき選択状態が切り替わる", () => {
   it("最初は「宿泊なし」以外は選択されていない", () => {
     const content = render(<StayExtensionOptionsRadio />);
     expect(content.getByRole("radio", { name: "前泊のみ" })).not.toBeChecked();
+    expect(content.getByRole("radio", { name: "後泊のみ" })).not.toBeChecked();
+    expect(
+      content.getByRole("radio", { name: "前泊と後泊" })
+    ).not.toBeChecked();
   });
 
   it("別の選択肢をクリックすると選択状態が切り替わる", async () => {
