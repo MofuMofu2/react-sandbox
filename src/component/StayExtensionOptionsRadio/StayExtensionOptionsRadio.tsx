@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 
+const StayExtensionOptions = [
+  { value: "previous", label: "前泊のみ" },
+  { value: "next", label: "後泊のみ" },
+  { value: "both", label: "前泊と後泊" },
+  { value: "none", label: "宿泊なし" },
+];
+
 export default function StayExtensionOptionsRadio() {
   const [selectedValue, setSelectedValue] = useState("none");
 
@@ -9,46 +16,17 @@ export default function StayExtensionOptionsRadio() {
 
   return (
     <div>
-      <label>
-        <input
-          type="radio"
-          name="extension"
-          value="previous"
-          checked={selectedValue === "previous"}
-          onChange={handleChange}
-        />
-        前泊のみ
-      </label>
-      <label>
-        <input
-          type="radio"
-          name="extension"
-          value="next"
-          checked={selectedValue === "next"}
-          onChange={handleChange}
-        />
-        後泊のみ
-      </label>
-      <label>
-        <input
-          type="radio"
-          name="extension"
-          value="both"
-          checked={selectedValue === "both"}
-          onChange={handleChange}
-        />
-        前泊と後泊
-      </label>
-      <label>
-        <input
-          type="radio"
-          name="extension"
-          value="none"
-          checked={selectedValue === "none"}
-          onChange={handleChange}
-        />
-        宿泊なし
-      </label>
+      {StayExtensionOptions.map((option) => (
+        <label key={option.value}>
+          <input
+            type="radio"
+            value={option.value}
+            checked={selectedValue === option.value}
+            onChange={handleChange}
+          />
+          {option.label}
+        </label>
+      ))}
     </div>
   );
 }
