@@ -8,6 +8,7 @@ import About from "./routes/About";
 import AlertPage from "./routes/alert-page/AlertPage";
 import Article from "./routes/Article";
 import BookQueryPage from "./routes/BookQueryPage";
+import FormPage from "./routes/form-page/FormPage";
 import NotFoundPage from "./routes/NotFoundPage";
 import RouterApp from "./routes/RouterApp";
 import SearchPage from "./routes/SearchPage";
@@ -22,6 +23,7 @@ const routesBasic = createBrowserRouter(
       <Route path="/search/*" element={<SearchPage />} />
       <Route path="/book-query" element={<BookQueryPage />} />
       <Route path="/alert-page" element={<AlertPage />} />
+      <Route path="/form-page" element={<FormPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
