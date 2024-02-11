@@ -25,4 +25,16 @@ describe("チェックボックス操作に関するテストケース", () => {
     // チェック状態がONになっていることを確認
     expect(content.getByRole("checkbox")).toBeChecked();
   });
+
+  it("チェックボックスONの状態でクリックするとOFF状態に切り替わる", async () => {
+    // イベント検知のセットアップ
+    const event = userEvent.setup();
+    const content = render(<AgreementCheckbox />);
+    // チェックボックスをクリックしてONにする
+    await event.click(content.getByRole("checkbox"));
+    // チェックボックスをクリックしてOFFにする
+    await event.click(content.getByRole("checkbox"));
+    // チェック状態がOFFになっていることを確認
+    expect(content.getByRole("checkbox")).not.toBeChecked();
+  });
 });
