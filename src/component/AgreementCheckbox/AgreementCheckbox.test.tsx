@@ -1,15 +1,28 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import AgreementCheckbox from "./AgreementCheckbox";
 
 describe("初期状態に関するテスト", () => {
   it("ラベルテキストがデグレードしていない", () => {
-    const { getByText } = render(<AgreementCheckbox />);
-    expect(getByText("同意する")).toBeInTheDocument();
+    const content = render(<AgreementCheckbox />);
+    expect(content.getByText("同意する")).toBeInTheDocument();
   });
 
   it("チェックボックスはOFFの状態で始まる", () => {
-    const { getByRole } = render(<AgreementCheckbox />);
-    expect(getByRole("checkbox")).not.toBeChecked();
+    const content = render(<AgreementCheckbox />);
+    expect(content.getByRole("checkbox")).not.toBeChecked();
+  });
+});
+
+describe("チェックボックス操作に関するテストケース", () => {
+  it("チェックボックスを一度クリックすると状態が切り替わる", async () => {
+    // イベント検知のセットアップ
+    const event = userEvent.setup();
+    const content = render(<AgreementCheckbox />);
+    // チェックボックスをクリックする
+    await event.click(content.getByRole("checkbox"));
+    // チェック状態がONになっていることを確認
+    expect(content.getByRole("checkbox")).toBeChecked();
   });
 });
