@@ -11,8 +11,7 @@ describe("初期状態のテスト", () => {
   it("前泊のみのラベルテキストとvalueがデグレードしていない", () => {
     const content = render(<StayExtensionSelectBox />);
     expect(content.getByText("前泊のみ")).toBeTruthy();
-    expect(content.getByRole("option", { name: "前泊のみ" })).toHaveAttribute(
-      "value",
+    expect(content.getByRole("option", { name: "前泊のみ" })).toHaveValue(
       "previous"
     );
   });
