@@ -7,4 +7,13 @@ describe("初期状態のテスト", () => {
     const content = render(<StayExtensionSelectBox />);
     expect(content.getAllByRole("option")).toHaveLength(4);
   });
+
+  it("前泊のみのラベルテキストとvalueがデグレードしていない", () => {
+    const content = render(<StayExtensionSelectBox />);
+    expect(content.getByText("前泊のみ")).toBeTruthy();
+    expect(content.getByRole("option", { name: "前泊のみ" })).toHaveAttribute(
+      "value",
+      "previous"
+    );
+  });
 });
