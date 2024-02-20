@@ -30,4 +30,17 @@ describe("オプションが選べることをテスト", () => {
     // 前泊が選択されている
     expect(content.getByRole("listbox")).toHaveValue(["previous"]);
   });
+
+  it("複数の選択肢を選択したときも対応するvalueが選択状態になる", async () => {
+    // イベント検知のセットアップ
+    const event = userEvent.setup();
+    const content = render(<StayExtensionMultipleSelectBox />);
+    // 前泊と後泊を選択
+    await event.selectOptions(content.getByRole("listbox"), [
+      "前泊のみ",
+      "後泊のみ",
+    ]);
+    // 前泊と後泊が選択されている
+    expect(content.getByRole("listbox")).toHaveValue(["previous", "next"]);
+  });
 });
