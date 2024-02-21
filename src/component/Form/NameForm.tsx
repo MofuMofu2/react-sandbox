@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 interface UserInfo {
   lastName: string;
-  firstName: number;
+  firstName: string;
 }
 
 export default function NameForm() {
