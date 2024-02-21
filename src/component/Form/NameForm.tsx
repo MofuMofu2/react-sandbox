@@ -5,7 +5,7 @@ interface UserInfo {
   age: number;
 }
 
-export default function StateForm() {
+export default function NameForm() {
   const [form, setForm] = useState<UserInfo>({ name: "山田太郎", age: 18 });
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,10 +18,10 @@ export default function StateForm() {
   return (
     <form>
       <div>
-        <label htmlFor="name">名前</label>
+        <label htmlFor="last-name">苗字</label>
         <input
-          id="name"
-          name="name"
+          id="last-name"
+          name="last-name"
           type="text"
           onChange={handleForm}
           value={form.name}
