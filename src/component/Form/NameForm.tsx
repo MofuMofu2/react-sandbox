@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
 interface UserInfo {
-  name: string;
-  age: number;
+  lastName: string;
+  firstName: number;
 }
 
 export default function NameForm() {
-  const [form, setForm] = useState<UserInfo>({ name: "山田太郎", age: 18 });
+  const [form, setForm] = useState<UserInfo>({
+    lastName: "山田",
+    firstName: "太郎",
+  });
 
   const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({
@@ -24,7 +27,7 @@ export default function NameForm() {
           name="last-name"
           type="text"
           onChange={handleForm}
-          value={form.name}
+          value={form.lastName}
         />
       </div>
       <div>
@@ -34,11 +37,11 @@ export default function NameForm() {
           name="age"
           type="text"
           onChange={handleForm}
-          value={form.age}
+          value={form.firstName}
         />
       </div>
       <p>
-        こんにちは、{form.name} {`${form.age} 歳`}さん！
+        こんにちは、{form.lastName} {form.firstName}さん！
       </p>
     </form>
   );
