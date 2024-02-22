@@ -20,6 +20,9 @@ describe("フォーム入力値を編集したときのテスト", () => {
     const event = userEvent.setup();
     const content = render(<StateForm />);
 
+    // フォームを初期化する
+    await event.clear(content.getByRole("textbox", { name: "苗字" }));
+
     // 苗字のフォームを編集する
     await event.type(content.getByRole("textbox", { name: "苗字" }), "田中");
 
