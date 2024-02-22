@@ -23,6 +23,9 @@ describe("フォーム入力値を編集したときのテスト", () => {
     // 苗字のフォームを編集する
     await event.type(content.getByRole("textbox", { name: "苗字" }), "田中");
 
+    // フォームの値が変更されたことを確認
+    expect(content.getByRole("textbox", { name: "苗字" })).toHaveValue("田中");
+
     // 苗字のフォームを編集したときの値でテキストが表示される
     expect(
       content.getByText("こんにちは、田中 太郎さん！")

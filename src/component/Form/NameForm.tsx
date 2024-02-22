@@ -21,20 +21,20 @@ export default function NameForm() {
   return (
     <form>
       <div>
-        <label htmlFor="last-name">苗字</label>
+        <label htmlFor="lastName">苗字</label>
         <input
-          id="last-name"
-          name="last-name"
+          id="lastName"
+          name="lastName"
           type="text"
           onChange={handleForm}
           value={form.lastName}
         />
       </div>
       <div>
-        <label htmlFor="age">名前</label>
+        <label htmlFor="firstName">名前</label>
         <input
-          id="age"
-          name="age"
+          id="firstName"
+          name="firstName"
           type="text"
           onChange={handleForm}
           value={form.firstName}
