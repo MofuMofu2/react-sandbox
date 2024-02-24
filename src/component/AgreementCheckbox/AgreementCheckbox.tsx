@@ -12,7 +12,7 @@ export default function AgreementCheckbox() {
       <input
         type="checkbox"
         name="agreement"
-        onClick={handleChecked}
+        onChange={handleChecked}
         checked={checked}
       />
       <label htmlFor="agreement">同意する</label>
