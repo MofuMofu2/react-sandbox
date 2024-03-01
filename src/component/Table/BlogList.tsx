@@ -1,6 +1,18 @@
 import React from "react";
+import { type BlogPosts, type Users } from "./tableInterface";
 
-export default function BlogList() {
+type BlogListProps = {
+  /**
+   * ブログ記事の情報
+   */
+  blogList: BlogPosts[];
+  /**
+   * ユーザー情報
+   */
+  userList: Users[];
+};
+
+export default function BlogList({ ...props }: BlogListProps) {
   return (
     <table>
       <thead>
