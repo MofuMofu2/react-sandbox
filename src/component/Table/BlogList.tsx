@@ -23,16 +23,16 @@ export default function BlogList({ ...props }: BlogListProps) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Reactの使い方</td>
-          <td>ユーザーA</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Vueの使い方</td>
-          <td>ユーザーB</td>
-        </tr>
+        {props.blogList.map((blog, index) => {
+          const user = props.userList.find((user) => user.id === blog.userId);
+          return (
+            <tr key={index}>
+              <td>{blog.id}</td>
+              <td>{blog.title}</td>
+              <td>{user?.name}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
