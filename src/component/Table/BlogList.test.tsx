@@ -32,7 +32,7 @@ describe("テーブル要素の表示に関するテスト", () => {
     const tr = content.getAllByRole("row");
 
     // 二列目のtr要素に記事IDが表示されているか確認
-    expect(tr[1]).toHaveTextContent("1");
+    expect(tr[1].querySelectorAll("td")[0]).toHaveTextContent("1");
   });
 
   it("タイトルIDはpostsのtitleが表示される", () => {
@@ -44,7 +44,7 @@ describe("テーブル要素の表示に関するテスト", () => {
     const tr = content.getAllByRole("row");
 
     // 二列目のtd要素にタイトルが表示されているか確認
-    expect(tr[1]).toHaveTextContent(
+    expect(tr[1].querySelectorAll("td")[1]).toHaveTextContent(
       "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
     );
   });
@@ -58,6 +58,6 @@ describe("テーブル要素の表示に関するテスト", () => {
     const tr = content.getAllByRole("row");
 
     // 二列目のtd要素に投稿ユーザーが表示されているか確認
-    expect(tr[1]).toHaveTextContent("Leanne Graham");
+    expect(tr[1].querySelectorAll("td")[2]).toHaveTextContent("Leanne Graham");
   });
 });
