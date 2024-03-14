@@ -10,7 +10,9 @@
     "sort-json": "node scripts/sort-json.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "prepare": "husky install",
-    "test": "node scripts/test.js --watchAll=false"
+    "test": "node scripts/test.js --watchAll=false",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "browserslist": {
     "production": [
@@ -47,6 +49,15 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.19",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/addon-onboarding": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/test": "^8.0.0",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/react-hooks": "^8.0.1",
@@ -80,7 +91,8 @@
     "prettier": "^3.0.3",
     "prettier-plugin-sort-json": "^3.1.0",
     "prop-types": "^15.8.1",
-    "react-dev-utils": "^12.0.1"
+    "react-dev-utils": "^12.0.1",
+    "storybook": "^8.0.0"
   },
   "msw": {
     "workerDirectory": "public"

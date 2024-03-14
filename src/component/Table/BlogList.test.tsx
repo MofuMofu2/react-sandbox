@@ -1,13 +1,33 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { composeStory } from "@storybook/react";
 import BlogList from "./BlogList";
+import Meta, { Default } from "./BlogList.stories";
 import { blogPostsMock, usersMock } from "./tableMock";
+// storiesのインポート
+
+const BlogListStory = composeStory(Default, Meta);
 
 describe("テーブルヘッダーが表示できる", () => {
   it("テーブルヘッダーのリストがデグレードしていない", () => {
     const content = render(
       <BlogList blogList={blogPostsMock} userList={usersMock} />
     );
+    // テキストが存在するか確認
+    expect(content.getByText("記事ID")).toBeInTheDocument();
+
+    // ARIA-Role属性でヘッダーが取得できるか確認
+    const headers = content.getAllByRole("columnheader");
+
+    // 見出し「タイトル」が存在するか確認
+    expect(headers[1]).toHaveTextContent("タイトル");
+
+    // 見出し「投稿ユーザー」が存在するか確認
+    expect(headers[2]).toHaveTextContent("投稿ユーザー");
+  });
+
+  it("テーブルヘッダーのリストがデグレードしていない", () => {
+    const content = render(<BlogListStory />);
     // テキストが存在するか確認
     expect(content.getByText("記事ID")).toBeInTheDocument();
 
