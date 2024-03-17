@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 
-export default function AgreementCheckbox() {
+type AgreementCheckboxProps = {
+  onCheckboxStatusChanged?: (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => void;
+};
+
+export default function AgreementCheckbox({
+  onCheckboxStatusChanged,
+}: AgreementCheckboxProps) {
   const [checked, setChecked] = useState(false);
 
-  const handleChecked = () => {
+  const handleChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(!checked);
+    onCheckboxStatusChanged?.(event);
   };
 
   return (
