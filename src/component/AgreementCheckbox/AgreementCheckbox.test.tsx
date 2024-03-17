@@ -37,4 +37,18 @@ describe("チェックボックス操作に関するテストケース", () => {
     // チェック状態がOFFになっていることを確認
     expect(content.getByRole("checkbox")).not.toBeChecked();
   });
+
+  it("チェックボックスをクリックすると親コンポーネントへイベント発火状態を伝えること", async () => {
+    // イベント検知のセットアップ
+    const event = userEvent.setup();
+    // イベントハンドラのモックを用意
+    const handlerMock = jest.fn();
+    const content = render(
+      <AgreementCheckbox onCheckboxStatusChanged={handlerMock} />
+    );
+    // チェックボックスをクリックする
+    await event.click(content.getByRole("checkbox"));
+    // イベントハンドラが呼ばれたことを確認
+    expect(handlerMock).toHaveBeenCalled();
+  });
 });
