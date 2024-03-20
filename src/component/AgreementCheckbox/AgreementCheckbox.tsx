@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 type AgreementCheckboxProps = {
-  onCheckboxStatusChanged?: (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => void;
+  onCheckboxStatusChanged?: (event: boolean) => void;
 };
 
 export default function AgreementCheckbox({
@@ -13,7 +11,7 @@ export default function AgreementCheckbox({
 
   const handleChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(!checked);
-    onCheckboxStatusChanged?.(event);
+    onCheckboxStatusChanged?.(event.target.checked);
   };
 
   return (

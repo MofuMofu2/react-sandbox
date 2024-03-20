@@ -50,5 +50,7 @@ describe("チェックボックス操作に関するテストケース", () => {
     await event.click(content.getByRole("checkbox"));
     // イベントハンドラが呼ばれたことを確認
     expect(handlerMock).toHaveBeenCalled();
+    // チェックボックス状態が親コンポーネントに送信されることを確認
+    expect(handlerMock).toHaveBeenCalledWith(true);
   });
 });
