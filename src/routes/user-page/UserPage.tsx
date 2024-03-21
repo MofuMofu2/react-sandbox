@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import i18n from "../i18n/i18n";
+import i18n from "../../i18n/i18n";
 
 interface Data {
   username: "string";
   locale: "ja" | "en";
 }
 
-export default function Root() {
+export default function UserPage() {
   const [data, setData] = useState<Data | undefined>(undefined);
   const { t } = useTranslation();
 
