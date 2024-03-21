@@ -80,6 +80,11 @@ export default function RouterApp() {
           <li>
             <NavLink to="/form-page">フォームコンポーネントのテスト</NavLink>
           </li>
+          <li>
+            <NavLink to="/users">
+              APIリクエストを伴うコンポーネントのテスト
+            </NavLink>
+          </li>
         </ul>
         <ScrollRestoration />
         <Outlet context={[count, setCount]} />
