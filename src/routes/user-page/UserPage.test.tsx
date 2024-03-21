@@ -9,4 +9,9 @@ describe("APIリクエスト前のレンダリング内容", () => {
       content.getByRole("button", { name: "Fetch Data" })
     ).toBeInTheDocument();
   });
+
+  it("初めはAPIリクエスト情報がないのでNo dataが表示されている", () => {
+    const content = render(<UserPage />);
+    expect(content.getByText("No data")).toBeInTheDocument();
+  });
 });
