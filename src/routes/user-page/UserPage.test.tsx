@@ -16,21 +16,23 @@ describe("APIリクエスト前のレンダリング内容", () => {
   });
 });
 
-describe("APIリクエスト後のレンダリング内容", () => {
-  // Fetchのモックを設定
+describe("APIリクエスト後のレンダリング内容（jest.mock）", () => {
+  // fetchへの参照をセット
   const originalFetch = global.fetch;
   beforeEach(() => {
-    global.fetch = jest.fn();
+    global.fetch = jest.fn(); // fetchをjest.fn()でモック化
   });
 
   // 各テスト後にモックをクリーンアップ
   afterEach(() => {
-    global.fetch = originalFetch;
+    global.fetch = originalFetch; // 元の参照に戻す
   });
 
   it("ボタンクリックするとAPIリクエストが行われる", async () => {
     // モックのレスポンスを設定
     const mockUserData = { username: "testUser", locale: "en" };
+    // mockResolvedValueOnceはjest.MockのAPIで、fetchのレスポンスをモック化する
+    // だからasキャストで無理やりつけるしかない
     (global.fetch as jest.Mock).mockResolvedValueOnce({
       ok: true,
       json: async () => await Promise.resolve(mockUserData),
@@ -38,6 +40,7 @@ describe("APIリクエスト後のレンダリング内容", () => {
     const content = render(<UserPage />);
     const button = content.getByRole("button", { name: "Fetch Data" });
     button.click();
+    // UIを更新してからテストを起動する
     await waitFor(() => {
       expect(content.getByText("testUser")).toBeInTheDocument();
       expect(content.getByText("en")).toBeInTheDocument();
