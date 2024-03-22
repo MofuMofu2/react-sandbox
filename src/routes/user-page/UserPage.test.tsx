@@ -17,13 +17,30 @@ describe("APIリクエスト前のレンダリング内容", () => {
 });
 
 describe("APIリクエスト後のレンダリング内容", () => {
+  // Fetchのモックを設定
+  const originalFetch = global.fetch;
+  beforeEach(() => {
+    global.fetch = jest.fn();
+  });
+
+  // 各テスト後にモックをクリーンアップ
+  afterEach(() => {
+    global.fetch = originalFetch;
+  });
+
   it("ボタンクリックするとAPIリクエストが行われる", async () => {
+    // モックのレスポンスを設定
+    const mockUserData = { username: "testUser", locale: "en" };
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      json: async () => await Promise.resolve(mockUserData),
+    });
     const content = render(<UserPage />);
     const button = content.getByRole("button", { name: "Fetch Data" });
     button.click();
     await waitFor(() => {
-      expect(content.getByText("Username: string")).toBeInTheDocument();
-      expect(content.getByText("Locale: ja")).toBeInTheDocument();
+      expect(content.getByText("testUser")).toBeInTheDocument();
+      expect(content.getByText("en")).toBeInTheDocument();
     });
   });
 });

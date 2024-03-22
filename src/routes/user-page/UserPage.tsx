@@ -31,8 +31,8 @@ export default function UserPage() {
       <div>
         {data !== undefined ? (
           <div>
-            <div>Username: {data.username}</div>
-            <div>Locale: {data.locale}</div>
+            <div>{data.username}</div>
+            <div>{data.locale}</div>
           </div>
         ) : (
           <div>No data</div>
