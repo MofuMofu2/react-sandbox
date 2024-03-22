@@ -22,6 +22,9 @@ module.exports = {
     "<rootDir>/src/setupTests.ts"
   ],
   "testEnvironment": "jsdom",
+  "testEnvironmentOptions": {
+    customExportConditions: [''],
+  },
   "transformIgnorePatterns": [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
     "^.+\\.module\\.(css|sass|scss)$"
