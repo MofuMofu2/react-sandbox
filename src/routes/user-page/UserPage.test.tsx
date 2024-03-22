@@ -1,6 +1,7 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import UserPage from "./UserPage";
+import { server } from "../../mocks/server";
 
 describe("APIリクエスト前のレンダリング内容", () => {
   it("ボタンコンポーネントがレンダリングされていること", () => {
@@ -45,5 +46,20 @@ describe("APIリクエスト後のレンダリング内容（jest.mock）", () =
       expect(content.getByText("testUser")).toBeInTheDocument();
       expect(content.getByText("en")).toBeInTheDocument();
     });
+  });
+});
+
+describe("APIリクエスト後のレンダリング内容（msw）", () => {
+  beforeEach(() => {
+    // テスト前にmswを有効化
+    server.listen();
+  });
+  afterEach(() => {
+    // テストの実行後に毎回mswをリセットして次に影響が出ないようにする
+    server.resetHandlers();
+  });
+  afterAll(() => {
+    // 全部のテストが終わったらmswサーバーを閉じる
+    server.close();
   });
 });
