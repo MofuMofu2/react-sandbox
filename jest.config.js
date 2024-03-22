@@ -16,6 +16,7 @@ module.exports = {
     "!src/**/*.d.ts"
   ],
   "setupFiles": [
+    "./jest.polifil.js",
     "react-app-polyfill/jsdom"
   ],
   "setupFilesAfterEnv": [
