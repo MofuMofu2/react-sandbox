@@ -62,4 +62,15 @@ describe("APIリクエスト後のレンダリング内容（msw）", () => {
     // 全部のテストが終わったらmswサーバーを閉じる
     server.close();
   });
+
+  it("ボタンクリックするとAPIリクエストが行われる", async () => {
+    const content = render(<UserPage />);
+    const button = content.getByRole("button", { name: "Fetch Data" });
+    button.click();
+    // UIを更新してからテストを起動する
+    await waitFor(() => {
+      expect(content.getByText("testUser")).toBeInTheDocument();
+      expect(content.getByText("en")).toBeInTheDocument();
+    });
+  });
 });
