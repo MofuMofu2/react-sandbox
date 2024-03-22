@@ -69,7 +69,7 @@ describe("APIリクエスト後のレンダリング内容（msw）", () => {
     button.click();
     // UIを更新してからテストを起動する
     await waitFor(() => {
-      expect(content.getByText("testUser")).toBeInTheDocument();
+      expect(content.getByText("miff")).toBeInTheDocument();
       expect(content.getByText("en")).toBeInTheDocument();
     });
   });
