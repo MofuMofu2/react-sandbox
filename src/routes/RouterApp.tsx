@@ -85,6 +85,11 @@ export default function RouterApp() {
               APIリクエストを伴うコンポーネントのテスト
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/loader">
+              React RouterのLoaderを使うコンポーネントのテスト
+            </NavLink>
+          </li>
         </ul>
         <ScrollRestoration />
         <Outlet context={[count, setCount]} />
