@@ -2,6 +2,15 @@ import React from "react";
 import { render } from "@testing-library/react";
 import StarRating from "./";
 
+it("星のアイコンにpropsされたcolorが割り当てられている", () => {
+  // デフォルト値はredなので変更した値を渡す
+  const content = render(<StarRating color="blue" count={3} />);
+  // 星の要素を取得
+  const stars = content.getAllByTestId("star");
+  // 星の色はblue
+  expect(stars[0]).toHaveClass("blue");
+});
+
 it("countの数だけ星が描画されている", () => {
   // デフォルト値は3なので変更した値を渡す
   const content = render(<StarRating color="red" count={5} />);
