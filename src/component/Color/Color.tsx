@@ -17,6 +17,7 @@ export default function Color() {
       </section>
       <section>
         <h2>選んだ色</h2>
+        <span>{color}</span>
         <div style={{ height: 50, backgroundColor: color }}></div>
       </section>
     </>
