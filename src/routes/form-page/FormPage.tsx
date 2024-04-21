@@ -1,5 +1,6 @@
 import React from "react";
 import AgreementCheckbox from "../../component/AgreementCheckbox/AgreementCheckbox";
+import Color from "../../component/Color/Color";
 import NameForm from "../../component/Form/NameForm";
 import StarRating from "../../component/StarRating";
 import StayExtensionMultipleSelectBox from "../../component/StayExtensionMultipleSelectBox/StayExtensionMultipleSelectBox";
@@ -15,6 +16,7 @@ export default function FormPage() {
       <StayExtensionMultipleSelectBox />
       <AgreementCheckbox />
       <NameForm />
+      <Color />
       <StarRating color="red" count={3} />
     </>
   );
