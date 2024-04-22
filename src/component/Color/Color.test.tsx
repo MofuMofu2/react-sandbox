@@ -11,3 +11,8 @@ it("h2タグで色を選ぶ領域のタイトルテキストがレンダリン�
   const content = render(<Color />);
   expect(content.getByRole("heading", { name: "色を選ぶ" })).toBeTruthy();
 });
+
+it("h2タグで選んだ色を描画する領域のタイトルテキストがレンダリングされている", () => {
+  const content = render(<Color />);
+  expect(content.getByRole("heading", { name: "選んだ色" })).toBeTruthy();
+});
