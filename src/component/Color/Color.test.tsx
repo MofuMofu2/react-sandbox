@@ -6,3 +6,8 @@ it("デフォルトのカラーコード値#000000が画面にレンダリング
   const content = render(<Color />);
   expect(content.getByText("#000000")).toBeTruthy();
 });
+
+it("h2タグで色を選ぶ領域のタイトルテキストがレンダリングされている", () => {
+  const content = render(<Color />);
+  expect(content.getByRole("heading", { name: "色を選ぶ" })).toBeTruthy();
+});
