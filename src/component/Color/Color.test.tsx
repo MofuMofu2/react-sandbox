@@ -42,7 +42,9 @@ it("フォームで指定した通りの背景色でレンダリングされて�
   // フォームに赤色のカラーコードを入力
   await event.type(content.getByRole("textbox"), "#ff0000");
 
-  expect(document.querySelector('[data-testid="render-color"]')).toHaveStyle({
+  expect(
+    content.container.querySelector('[data-testid="render-color"]')
+  ).toHaveStyle({
     backgroundColor: "rgb(255, 0, 0)",
   });
 });
