@@ -21,7 +21,7 @@ export default function Color() {
         <div
           style={{ height: 50, backgroundColor: color }}
           data-testid="render-color"
-        ></div>
+        />
       </section>
     </>
   );
