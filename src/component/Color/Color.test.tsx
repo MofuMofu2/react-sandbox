@@ -52,5 +52,5 @@ it("フォームで指定した通りの背景色でレンダリングされて�
 it("h2タグが2つ存在する", () => {
   const content = render(<Color />);
   // h2タグが2つ存在することを確認しているつもり
-  expect(content.getByRole("heading", { level: 2 })).toHaveLength(2);
+  expect(content.getAllByRole("heading", { level: 2 })).toHaveLength(2);
 });
