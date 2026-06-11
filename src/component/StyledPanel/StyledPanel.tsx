@@ -1,7 +1,7 @@
 import React from "react";
 
 interface StyledPanelProps {
-  children: JSX.Element[];
+  children: React.ReactElement[];
 }
 
 export default function StyledPanel(children: StyledPanelProps) {

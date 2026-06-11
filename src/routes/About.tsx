@@ -20,7 +20,7 @@ export default function About() {
       <h1>About</h1>
       <p>My name is {name}</p>
       <label htmlFor="name">Type Your Name</label>
-      <input id="name" type="text" value={name} onInput={handleChange} />
+      <input id="name" type="text" value={name} onChange={handleChange} />
       <StarRating color="red" count={3} />
     </>
   );

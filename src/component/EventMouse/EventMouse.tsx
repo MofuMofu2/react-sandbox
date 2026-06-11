@@ -18,6 +18,7 @@ export default function EventMouse() {
         <FontAwesomeIcon
           icon={faGrinStars}
           color={current}
+          className=""
           title="happy-face"
         />
         ここに出るよ
