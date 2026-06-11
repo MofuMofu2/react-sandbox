@@ -3,7 +3,7 @@ import React from "react";
 import { type BookSrc } from "../ForList/ForList";
 
 interface ListTemplateProps {
-  children: (src: BookSrc) => JSX.Element;
+  children: (src: BookSrc) => React.ReactElement;
   src: BookSrc[];
 }
 

@@ -11,12 +11,13 @@ interface StarProps {
 export default function Star({
   selected = false,
   ...props
-}: StarProps): JSX.Element {
+}: StarProps): React.ReactElement {
   return (
     <button onClick={props.onSelect}>
       <FontAwesomeIcon
         icon={faStar}
         color={selected ? "red" : "grey"}
+        className=""
         title={selected ? "red" : "grey"}
       />
     </button>

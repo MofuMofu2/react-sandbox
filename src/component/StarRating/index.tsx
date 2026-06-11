@@ -10,7 +10,7 @@ type StarRatingProps = {
 export default function StarRating({
   color = "red",
   count = 3,
-}: StarRatingProps): JSX.Element {
+}: StarRatingProps): React.ReactElement {
   return (
     <>
       {[...Array(count)].map((n, i) => (

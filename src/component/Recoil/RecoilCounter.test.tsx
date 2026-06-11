@@ -3,27 +3,22 @@ import React from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { RecoilRoot } from "recoil";
-
 import RecoilCounter from "./RecoilCounter";
+import { resetStore } from "../../store/atom";
+
+beforeEach(() => {
+  resetStore();
+});
 
 it("初期状態は0回しかクリックされていない", () => {
-  const content = render(
-    <RecoilRoot>
-      <RecoilCounter />
-    </RecoilRoot>
-  );
+  const content = render(<RecoilCounter />);
 
   expect(content.getByText("0回クリックされました")).toBeInTheDocument();
 });
 
 it("クリックするとカウンターが進む", async () => {
   const event = userEvent.setup();
-  const content = render(
-    <RecoilRoot>
-      <RecoilCounter />
-    </RecoilRoot>
-  );
+  const content = render(<RecoilCounter />);
 
   await event.click(content.getByText("カウント"));
   expect(content.getByText("1回クリックされました")).toBeInTheDocument();

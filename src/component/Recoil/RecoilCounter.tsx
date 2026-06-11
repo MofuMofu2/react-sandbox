@@ -1,11 +1,9 @@
 import React from "react";
 
-import { useRecoilState } from "recoil";
-
-import { counterAtom } from "../../store/atom";
+import { useCounterState } from "../../store/atom";
 
 export default function RecoilCounter() {
-  const [counter, setCounter] = useRecoilState<number>(counterAtom);
+  const [counter, setCounter] = useCounterState();
 
   const handleClick = () => {
     setCounter((c) => c + 1);

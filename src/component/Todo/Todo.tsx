@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
 import "./Todo.modules.css";
-import { useRecoilState, useRecoilValue } from "recoil";
 
-import { type TodoList, todoAtom } from "../../store/atom";
-import { todoLastIdSelector } from "../../store/selector";
+import { useTodoState } from "../../store/atom";
+import { useTodoLastId } from "../../store/selector";
 
 export default function Todo() {
   const [title, setTitle] = useState("");
-  const [todo, setTodo] = useRecoilState<TodoList[]>(todoAtom);
-  const maxId = useRecoilValue(todoLastIdSelector);
+  const [todo, setTodo] = useTodoState();
+  const maxId = useTodoLastId();
 
   const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
